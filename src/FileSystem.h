@@ -12,7 +12,7 @@
 
 namespace gkom {
 
-	class file {
+	class FileSystem {
 	public:
 		static std::string loadTextFile(std::string& relativePath);
 		static std::string loadTextFile(const char* relativePath);

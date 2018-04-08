@@ -9,8 +9,9 @@ set(APP_TARGET gkom_animation)
 include_directories(${PROJECT_SOURCE_DIR})
 add_executable(${APP_TARGET}
 		main.cpp
-		src/file.cpp
-		src/file.h
+		src/lib/stb_image.h
+		src/FileSystem.cpp
+		src/FileSystem.h
 		src/3d/Shader.cpp
 		src/3d/Shader.h
 		src/exception.cpp
@@ -21,7 +22,7 @@ add_executable(${APP_TARGET}
 		src/3d/Abs3DObj.h
 		src/obj/Screw.cpp
 		src/obj/Screw.h
-		src/3d/Point3D.h)
+		src/3d/Point3D.h src/3d/Texture.cpp src/3d/Texture.h)
 
 # glfw
 find_package(glfw3 REQUIRED)

@@ -2,7 +2,7 @@
 // Created by adam on 07.04.18.
 //
 
-#include <src/file.h>
+#include <src/FileSystem.h>
 #include "src/exception.h"
 #include "Shader.h"
 
@@ -29,14 +29,14 @@ Shader::Shader(std::string vertexPath, std::string fragmentPath) {
 	//Vertex Shader
 	vertexPath.insert(0, "../shaders/vertex/");
 	vertexPath.append(".vert");
-	std::string vertexCode = gkom::file::loadTextFile(vertexPath);
+	std::string vertexCode = gkom::FileSystem::loadTextFile(vertexPath);
 	GLuint vertexId = compileShader(vertexCode.c_str(), GL_VERTEX_SHADER);
 
 
 	//FragmentShader
 	fragmentPath.insert(0, "../shaders/fragment/");
 	fragmentPath.append(".frag");
-	std::string fragmentCode = gkom::file::loadTextFile(fragmentPath);
+	std::string fragmentCode = gkom::FileSystem::loadTextFile(fragmentPath);
 	GLuint fragmentId = compileShader(fragmentCode.c_str(), GL_FRAGMENT_SHADER);
 
 	// link Shader program

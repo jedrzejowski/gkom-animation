@@ -58,6 +58,9 @@ Window Window::open() {
 
 	glViewport(0, 0, WIDTH, HEIGHT);
 
+	// configure global opengl state
+	glEnable(GL_DEPTH_TEST);
+
 	Shader shader = Shader("basic", "basic");
 
 	anim::Screw srubka = anim::Screw();
@@ -66,17 +69,24 @@ Window Window::open() {
 	while (!glfwWindowShouldClose(glfwWin)) {
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		glm::mat4 transform;
-		transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
-		transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 model, view, projection;
 
-		shader.use();
-		GLint transformLoc = glGetUniformLocation(shader.getID(), "transform");
-		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
+		model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(1.0f, 0.0f, 0.0f));
+		projection = glm::perspective(glm::radians(45.0f), (float) 800 / (float) 600, 0.1f, 100.0f);
 
-		srubka.render();
+		float radius = 10.0f;
+		float camX = sin(glfwGetTime()) * radius;
+		float camZ = cos(glfwGetTime()) * radius;
+		view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+
+		shader.setMat4("projection", projection);
+		shader.setMat4("model", model);
+		shader.setMat4("view", view);
+
+
+		srubka.render(shader);
 
 		glfwPollEvents();
 		glfwSwapBuffers(glfwWin);

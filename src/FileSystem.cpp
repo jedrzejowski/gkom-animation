@@ -2,13 +2,13 @@
 // Created by adam on 07.04.18.
 //
 
-#include "file.h"
+#include "FileSystem.h"
 
-std::string gkom::file::loadTextFile(std::string& relativePath) {
-	return gkom::file::loadTextFile(relativePath.c_str());
+std::string gkom::FileSystem::loadTextFile(std::string& relativePath) {
+	return gkom::FileSystem::loadTextFile(relativePath.c_str());
 }
 
-std::string gkom::file::loadTextFile(const char* relativePath) {
+std::string gkom::FileSystem::loadTextFile(const char* relativePath) {
 	std::ifstream shader_file;
 	shader_file.exceptions(std::ifstream::badbit);
 

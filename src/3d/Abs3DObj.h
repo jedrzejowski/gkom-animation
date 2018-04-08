@@ -6,6 +6,7 @@
 #define GKOM_ANIMATION_ABS3DOBJ_H
 
 #include <GL/glew.h>
+#include "Shader.h"
 
 namespace gkom {
 	class Abs3DObj {
@@ -13,7 +14,7 @@ namespace gkom {
 		int stride;
 		GLuint VBO, EBO, VAO;
 	public:
-		virtual void render() = 0;
+		virtual void render(Shader &shader) = 0;
 	};
 }
 

@@ -7,13 +7,17 @@
 
 #include <src/3d/Abs3DObj.h>
 #include <src/3d/Shader.h>
+#include <src/3d/Texture.h>
 
 namespace gkom::anim {
 
 	class Screw : Abs3DObj {
 	private:
-		struct Point3D* vertices;
+		Texture texture;
+		struct Point3DeX* vertices;
+		unsigned int vertclesNum;
 		unsigned int* indices;
+		unsigned int indicesNum;
 
 		void initVertices();
 
@@ -22,7 +26,7 @@ namespace gkom::anim {
 
 		~Screw();
 
-		void render() override;
+		void render(Shader& shader) override;
 	};
 }
 
