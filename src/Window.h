@@ -16,14 +16,18 @@ namespace gkom {
 	private:
 		const GLuint WIDTH = 800, HEIGHT = 600;
 		GLFWwindow *glfwWin;
-		void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
+		Shader defaultShader;
 
+		void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
 		void windowLoop();
 	public:
 		Window();
 
 		Window init();
 		Window open();
+
+		const Shader
+
 	};
 }
 

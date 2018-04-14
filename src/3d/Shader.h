@@ -14,6 +14,8 @@ namespace gkom {
 		GLuint shaderId;
 	public:
 
+		Shader();
+
 		Shader(std::string vertexPath, std::string fragmentPath);
 
 		Shader(const char *vertexPath, const char *fragmentPath) :

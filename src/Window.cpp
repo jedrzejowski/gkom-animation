@@ -18,7 +18,6 @@
 using namespace gkom;
 
 Window::Window() {
-
 }
 
 void Window::keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode) {
@@ -61,7 +60,7 @@ Window Window::open() {
 	// configure global opengl state
 	glEnable(GL_DEPTH_TEST);
 
-	Shader shader = Shader("basic", "basic");
+	defaultShader = Shader("basic", "basic");
 
 	anim::Screw srubka = anim::Screw();
 
@@ -81,12 +80,12 @@ Window Window::open() {
 		float camZ = cos(glfwGetTime()) * radius;
 		view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 
-		shader.setMat4("projection", projection);
-		shader.setMat4("model", model);
-		shader.setMat4("view", view);
+		defaultShader.setMat4("projection", projection);
+		defaultShader.setMat4("model", model);
+		defaultShader.setMat4("view", view);
 
 
-		srubka.render(shader);
+		srubka.render(this);
 
 		glfwPollEvents();
 		glfwSwapBuffers(glfwWin);

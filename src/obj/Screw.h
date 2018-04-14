@@ -26,7 +26,7 @@ namespace gkom::anim {
 
 		~Screw();
 
-		void render(Shader& shader) override;
+		void render(Window& window) override;
 	};
 }
 

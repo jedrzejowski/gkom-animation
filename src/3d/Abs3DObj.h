@@ -6,6 +6,7 @@
 #define GKOM_ANIMATION_ABS3DOBJ_H
 
 #include <GL/glew.h>
+#include <src/Window.h>
 #include "Shader.h"
 
 namespace gkom {
@@ -14,7 +15,10 @@ namespace gkom {
 		int stride;
 		GLuint VBO, EBO, VAO;
 	public:
-		virtual void render(Shader &shader) = 0;
+		virtual void render(Window &window) = 0;
+		void render(Window* window){
+			render(*window);
+		}
 	};
 }
 

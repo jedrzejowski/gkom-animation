@@ -128,11 +128,11 @@ void anim::Screw::initVertices() {
 	indicesNum = I;
 }
 
-void anim::Screw::render(Shader& shader) {
+void anim::Screw::render(Window& window) {
 
 
 	texture.use();
-	shader.use();
+	window.defaultShader.use();
 
 	glBindVertexArray(VAO);
 
