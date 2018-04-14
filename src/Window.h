@@ -16,7 +16,7 @@ namespace gkom {
 	private:
 		const GLuint WIDTH = 800, HEIGHT = 600;
 		GLFWwindow *glfwWin;
-		Shader defaultShader;
+		glm::mat4 cameraMatrix, projectionMatrix;
 
 		void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
 		void windowLoop();
@@ -26,8 +26,13 @@ namespace gkom {
 		Window init();
 		Window open();
 
-		const Shader
+		const glm::mat4 getCameraMatrix() const {
+			return cameraMatrix;
+		}
 
+		const glm::mat4 getProjectionMatrix() const {
+			return projectionMatrix;
+		}
 	};
 }
 

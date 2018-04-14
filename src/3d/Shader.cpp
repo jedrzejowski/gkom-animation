@@ -8,10 +8,6 @@
 
 using namespace gkom;
 
-Shader::Shader() {
-
-}
-
 GLuint compileShader(const GLchar *shaderCode, GLenum shaderType) {
 	GLuint shader_id = glCreateShader(shaderType);
 	glShaderSource(shader_id, 1, &shaderCode, nullptr);

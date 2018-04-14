@@ -11,13 +11,10 @@
 
 namespace gkom::anim {
 
-	class Screw : Abs3DObj {
+	class Screw : public Abs3DObj {
 	private:
 		Texture texture;
-		struct Point3DeX* vertices;
-		unsigned int vertclesNum;
-		unsigned int* indices;
-		unsigned int indicesNum;
+		Shader shader;
 
 		void initVertices();
 

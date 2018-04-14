@@ -12,13 +12,20 @@
 namespace gkom {
 	class Abs3DObj {
 	protected:
-		int stride;
 		GLuint VBO, EBO, VAO;
+
+		struct Point3DeX* vertices;
+		struct SimpleTriangle* indices;
+		unsigned int vertclesNum;
+		unsigned int indicesNum;
 	public:
+		glm::mat4 modelMatrix;
+
+		Abs3DObj();
+		~Abs3DObj();
 		virtual void render(Window &window) = 0;
-		void render(Window* window){
-			render(*window);
-		}
+
+
 	};
 }
 

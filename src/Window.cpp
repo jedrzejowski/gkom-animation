@@ -10,10 +10,12 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <src/obj/Wrench.h>
 
 #include "Window.h"
 #include "exception.h"
 #include "src/obj/Screw.h"
+#include "Animation.h"
 
 using namespace gkom;
 
@@ -43,7 +45,7 @@ Window Window::init() {
 
 Window Window::open() {
 
-	glfwWin = glfwCreateWindow(WIDTH, HEIGHT, "GKOM - OpenGL 01", nullptr, nullptr);
+	glfwWin = glfwCreateWindow(WIDTH, HEIGHT, "GKOM - Adam Jędrzejowski", nullptr, nullptr);
 
 	if (glfwWin == nullptr)
 		throw exception("Can't open GLFW window");
@@ -60,32 +62,22 @@ Window Window::open() {
 	// configure global opengl state
 	glEnable(GL_DEPTH_TEST);
 
-	defaultShader = Shader("basic", "basic");
+	cameraMatrix = glm::lookAt(glm::vec3(0.0f, 3.0f, 3.0f),
+							 glm::vec3(0.0f, 0.0f, 0.0f),
+							 glm::vec3(0.0f, 1.0f, 0.0f));
 
-	anim::Screw srubka = anim::Screw();
+	projectionMatrix = glm::perspective(glm::radians(45.0f), (float) WIDTH / (float) HEIGHT, 0.1f, 100.0f);
 
+	Animation anim = Animation();
+
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	while (!glfwWindowShouldClose(glfwWin)) {
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		glm::mat4 model, view, projection;
-
-		model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(1.0f, 0.0f, 0.0f));
-		projection = glm::perspective(glm::radians(45.0f), (float) 800 / (float) 600, 0.1f, 100.0f);
-
-		float radius = 10.0f;
-		float camX = sin(glfwGetTime()) * radius;
-		float camZ = cos(glfwGetTime()) * radius;
-		view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
-
-		defaultShader.setMat4("projection", projection);
-		defaultShader.setMat4("model", model);
-		defaultShader.setMat4("view", view);
-
-
-		srubka.render(this);
+		anim.render(*this);
 
 		glfwPollEvents();
 		glfwSwapBuffers(glfwWin);

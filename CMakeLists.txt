@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 project(gkom_animation)
 find_package(PkgConfig)
 
+#set(CMAKE_CXX_COMPILER "clang")
+
 set(CMAKE_CXX_STANDARD 11)
 set(APP_TARGET gkom_animation)
 
@@ -22,7 +24,14 @@ add_executable(${APP_TARGET}
 		src/3d/Abs3DObj.h
 		src/obj/Screw.cpp
 		src/obj/Screw.h
-		src/3d/Point3D.h src/3d/Texture.cpp src/3d/Texture.h)
+		src/3d/Point3D.cpp
+		src/3d/Point3D.h
+		src/3d/Texture.cpp
+		src/3d/Texture.h
+		src/obj/Wrench.cpp
+		src/obj/Wrench.h
+		src/Animation.cpp
+		src/Animation.h)
 
 # glfw
 find_package(glfw3 REQUIRED)

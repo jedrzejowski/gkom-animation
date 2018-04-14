@@ -6,12 +6,13 @@
 #define GKOM_ANIMATION_POINT_H
 
 #include <GL/glew.h>
+#include <zconf.h>
 
 namespace gkom {
 
 	struct Point3D {
-		static unsigned int SIZE;
-		static unsigned int OFFSET;
+		static uint SIZE;
+		static uint OFFSET;
 
 		GLfloat X = 0.0f;
 		GLfloat Y = 0.0f;
@@ -26,8 +27,8 @@ namespace gkom {
 
 
 	struct Color {
-		static unsigned int SIZE;
-		static unsigned int OFFSET;
+		static uint SIZE;
+		static uint OFFSET;
 
 		GLfloat R = 0.0f;
 		GLfloat G = 0.0f;
@@ -41,8 +42,8 @@ namespace gkom {
 	};
 
 	struct TexCoord {
-		static unsigned int SIZE;
-		static unsigned int OFFSET;
+		static uint SIZE;
+		static uint OFFSET;
 
 		GLfloat X = 0.0f;
 		GLfloat Y = 0.0f;
@@ -53,7 +54,9 @@ namespace gkom {
 	};
 
 	struct Point3DeX {
-		static unsigned int SIZE;
+		static uint SIZE;
+
+		static void BindGlVAP();
 
 		Point3D point;
 		Color color;
@@ -78,14 +81,18 @@ namespace gkom {
 																					  color(R, G, B) {}
 	};
 
+	struct SimpleTriangle {
+		uint first;
+		uint second;
+		uint third;
 
-	unsigned int Point3D::SIZE = sizeof(Point3D);
-	unsigned int Color::SIZE = sizeof(Color);
-	unsigned int TexCoord::SIZE = sizeof(TexCoord);
-	unsigned int Point3DeX::SIZE = sizeof(Point3DeX);
+		static uint SIZE;
 
-	unsigned int Point3D::OFFSET = 0;
-	unsigned int Color::OFFSET = Point3D::OFFSET + Point3D::SIZE;
-	unsigned int TexCoord::OFFSET = Color::OFFSET + Color::SIZE;;
+		SimpleTriangle() {}
+
+		SimpleTriangle(const uint first, const uint second, const uint third) : first(first), second(second),
+																					  third(third) {}
+		SimpleTriangle operator+(const int& n);
+	};
 }
 #endif //GKOM_ANIMATION_POINT_H
