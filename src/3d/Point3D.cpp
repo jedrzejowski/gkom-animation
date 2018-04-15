@@ -16,6 +16,13 @@ namespace gkom {
 		return SimpleTriangle(this->first + n, this->second + n, this->third + n);
 	}
 
+	SimpleTriangle& SimpleTriangle::operator+=(const int &n) {
+		this->first += n;
+		this->second += n;
+		this->third += n;
+		return *this;
+	}
+
 	unsigned int Point3D::OFFSET = 0;
 	unsigned int Color::OFFSET = Point3D::OFFSET + Point3D::SIZE;
 	unsigned int TexCoord::OFFSET = Color::OFFSET + Color::SIZE;

@@ -3,19 +3,39 @@
 //
 
 #include "Abs3DObj.h"
+#include "Point3D.h"
 
-gkom::Abs3DObj::Abs3DObj() {
+using namespace std;
 
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
-	glGenBuffers(1, &EBO);
+gkom::Abs3DObj::Abs3DObj(Animation *anim) : anim(anim) {
+
 
 }
 
 gkom::Abs3DObj::~Abs3DObj() {
 
-	glDeleteVertexArrays(1, &VAO);
-	glDeleteBuffers(1, &VBO);
-	glDeleteBuffers(1, &EBO);
+}
 
+void gkom::Abs3DObj::insertObjToBuffers() {
+	//cout << vertclesNum << endl;
+
+	vboPointer = anim->insertIntoVBO(vertclesNum, vertices);
+
+	cout << vboPointer << endl;
+
+	for (int i = 0; i < indicesNum; i++)
+		indices[0] += vboPointer;
+
+	eboPointer = anim->insertIntoEBO(indicesNum, indices);
+	cout << eboPointer << endl;
+}
+
+void gkom::Abs3DObj::draw() {
+
+	glDrawRangeElements(GL_TRIANGLES,
+						eboPointer,
+						eboPointer + 3 * indicesNum,
+						3 * indicesNum,
+						GL_UNSIGNED_INT,
+						nullptr);
 }

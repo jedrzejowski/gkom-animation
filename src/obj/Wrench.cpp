@@ -11,7 +11,8 @@
 
 using namespace gkom;
 
-anim::Wrench::Wrench() :
+anim::Wrench::Wrench(Animation *anim) :
+		Abs3DObj(anim),
 		shader("basic", "basic") {
 
 	texture = Texture("metal.jpeg");
@@ -19,26 +20,10 @@ anim::Wrench::Wrench() :
 
 	initVertices();
 
-	glBindVertexArray(VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-	glBufferData(GL_ARRAY_BUFFER,
-				 Point3DeX::SIZE * vertclesNum, vertices,
-				 GL_STATIC_DRAW);
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-				 SimpleTriangle::SIZE * indicesNum, indices,
-				 GL_STATIC_DRAW);
-
-	Point3DeX::BindGlVAP();
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
+	insertObjToBuffers();
 }
 
 anim::Wrench::~Wrench() {
-	delete[] vertices;
 }
 
 void anim::Wrench::initVertices() {
@@ -77,7 +62,7 @@ void anim::Wrench::initVertices() {
 
 	//Ściany
 	uint wallNum = 12;
-	indicesNum = wallNum + 9;
+	indicesNum = (wallNum + 9) * 2;
 	indices = new SimpleTriangle[indicesNum];
 	I = 0;
 
@@ -102,24 +87,22 @@ void anim::Wrench::initVertices() {
 		indices[I++] = SimpleTriangle(i + 0, i + 1, i + wallNum + 1);
 		indices[I++] = SimpleTriangle(i + 0, i + wallNum, i + wallNum + 1);
 	}
-
 	indices[I++] = SimpleTriangle(wallNum - 1, 0, wallNum * 2 - 1);
 	indices[I++] = SimpleTriangle(wallNum, 0, wallNum * 2 - 1);
 
 	indicesNum = I;
 }
 
-void anim::Wrench::render(gkom::Window &window) {
+void anim::Wrench::render(gkom::Window *window) {
 
-	shader.setMat4("projection", window.getProjectionMatrix());
+
+	shader.setMat4("projection", window->getProjectionMatrix());
 	shader.setMat4("model", modelMatrix);
-	shader.setMat4("camera", window.getCameraMatrix());
+	shader.setMat4("camera", window->getCameraMatrix());
 
 	texture.use();
 	shader.use();
 
-	glBindVertexArray(VAO);
-
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	glDrawElements(GL_TRIANGLES, 3 * indicesNum, GL_UNSIGNED_INT, nullptr);
+	draw();
 }
+

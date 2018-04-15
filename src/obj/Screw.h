@@ -19,11 +19,11 @@ namespace gkom::anim {
 		void initVertices();
 
 	public:
-		Screw();
+		Screw(Animation *anim);
 
 		~Screw();
 
-		void render(Window& window) override;
+		void render(Window* window) override;
 	};
 }
 

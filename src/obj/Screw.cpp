@@ -1,21 +1,19 @@
 //
-// Created by adam on 07.04.18.
+// Created by adam on 14.04.18.
 //
 
-#include <cstdlib>
-#include <src/3d/Point3D.h>
-#include <iostream>
-#include <math.h>
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <src/3d/Point3D.h>
 
 #include "Screw.h"
 
 using namespace gkom;
 using namespace std;
 
-anim::Screw::Screw() :
+anim::Screw::Screw(Animation *anim) :
+		Abs3DObj(anim),
 		shader("basic", "basic") {
 
 
@@ -24,23 +22,10 @@ anim::Screw::Screw() :
 
 	initVertices();
 
-	glBindVertexArray(VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * vertclesNum, vertices, GL_STATIC_DRAW);
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, SimpleTriangle::SIZE * indicesNum, indices, GL_STATIC_DRAW);
-
-	Point3DeX::BindGlVAP();
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
+	insertObjToBuffers();
 }
 
 anim::Screw::~Screw() {
-
-	delete[] vertices;
 }
 
 void anim::Screw::initVertices() {
@@ -101,19 +86,16 @@ void anim::Screw::initVertices() {
 
 }
 
-void anim::Screw::render(Window &window) {
+void anim::Screw::render(Window *window) {
 
-	shader.setMat4("projection", window.getProjectionMatrix());
+	shader.setMat4("projection", window->getProjectionMatrix());
 	shader.setMat4("model", modelMatrix);
-	shader.setMat4("camera", window.getCameraMatrix());
+	shader.setMat4("camera", window->getCameraMatrix());
 
 	texture.use();
 	shader.use();
 
-	glBindVertexArray(VAO);
-
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	glDrawElements(GL_TRIANGLES, 3 * indicesNum, GL_UNSIGNED_INT, nullptr);
+	draw();
 }
 
 

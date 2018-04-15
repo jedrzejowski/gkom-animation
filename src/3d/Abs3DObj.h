@@ -8,23 +8,29 @@
 #include <GL/glew.h>
 #include <src/Window.h>
 #include "Shader.h"
+#include "Animation.h"
 
 namespace gkom {
 	class Abs3DObj {
 	protected:
-		GLuint VBO, EBO, VAO;
+		Animation* anim;
 
 		struct Point3DeX* vertices;
 		struct SimpleTriangle* indices;
-		unsigned int vertclesNum;
-		unsigned int indicesNum;
+		uint vertclesNum;
+		uint indicesNum;
+
+		uint vboPointer, eboPointer;
+
+		void draw();
 	public:
 		glm::mat4 modelMatrix;
 
-		Abs3DObj();
+		Abs3DObj(Animation* anim);
 		~Abs3DObj();
-		virtual void render(Window &window) = 0;
+		virtual void render(Window *window) = 0;
 
+		void insertObjToBuffers();
 
 	};
 }

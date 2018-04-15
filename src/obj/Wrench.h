@@ -18,11 +18,11 @@ namespace gkom::anim {
 		void initVertices();
 
 	public:
-		Wrench();
+		Wrench(Animation *anim);
 
 		~Wrench();
 
-		void render(Window& window) override;
+		void render(Window *window) override;
 	};
 }
 

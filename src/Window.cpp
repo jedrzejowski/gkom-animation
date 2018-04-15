@@ -11,11 +11,12 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <src/obj/Wrench.h>
+#include <src/obj/MyAnimation.h>
 
 #include "Window.h"
 #include "exception.h"
 #include "src/obj/Screw.h"
-#include "Animation.h"
+#include "src/3d/Animation.h"
 
 using namespace gkom;
 
@@ -62,22 +63,28 @@ Window Window::open() {
 	// configure global opengl state
 	glEnable(GL_DEPTH_TEST);
 
-	cameraMatrix = glm::lookAt(glm::vec3(0.0f, 3.0f, 3.0f),
-							 glm::vec3(0.0f, 0.0f, 0.0f),
-							 glm::vec3(0.0f, 1.0f, 0.0f));
-
 	projectionMatrix = glm::perspective(glm::radians(45.0f), (float) WIDTH / (float) HEIGHT, 0.1f, 100.0f);
 
-	Animation anim = Animation();
+	anim::MyAnimation anim = anim::MyAnimation();
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	while (!glfwWindowShouldClose(glfwWin)) {
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		anim.render(*this);
+		float radius = 10.0f;
+		float camX = sin(glfwGetTime()) * radius;
+		float camZ = cos(glfwGetTime()) * radius;
+		glm::mat4 view;
+		cameraMatrix = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+
+//		cameraMatrix = glm::lookAt(glm::vec3(3.0f, 3.0f, 3.0f),
+//								   glm::vec3(0.0f, 0.0f, 0.0f),
+//								   glm::vec3(0.0f, 1.0f, 0.0f));
+
+		anim.render(this);
 
 		glfwPollEvents();
 		glfwSwapBuffers(glfwWin);

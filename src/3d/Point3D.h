@@ -93,6 +93,7 @@ namespace gkom {
 		SimpleTriangle(const uint first, const uint second, const uint third) : first(first), second(second),
 																					  third(third) {}
 		SimpleTriangle operator+(const int& n);
+		SimpleTriangle& operator+=(const int& n);
 	};
 }
 #endif //GKOM_ANIMATION_POINT_H

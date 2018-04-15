@@ -30,8 +30,8 @@ add_executable(${APP_TARGET}
 		src/3d/Texture.h
 		src/obj/Wrench.cpp
 		src/obj/Wrench.h
-		src/Animation.cpp
-		src/Animation.h)
+		src/3d/Animation.cpp
+		src/3d/Animation.h src/obj/MyAnimation.cpp src/obj/MyAnimation.h)
 
 # glfw
 find_package(glfw3 REQUIRED)
