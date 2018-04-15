@@ -8,34 +8,33 @@
 using namespace std;
 
 gkom::Abs3DObj::Abs3DObj(Animation *anim) : anim(anim) {
+	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &EBO);
 
-
+	cout<<"VBO:"<<VBO<<endl;
+	cout<<"EBO:"<<EBO<<endl;
 }
 
 gkom::Abs3DObj::~Abs3DObj() {
-
+	glDeleteBuffers(1, &VBO);
+	glDeleteBuffers(1, &EBO);
 }
 
 void gkom::Abs3DObj::insertObjToBuffers() {
-	//cout << vertclesNum << endl;
+	cout << "insertObjToBuffers" << vertclesNum << endl;
 
-	vboPointer = anim->insertIntoVBO(vertclesNum, vertices);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * vertclesNum, vertices, GL_STATIC_DRAW);
 
-	cout << vboPointer << endl;
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, SimpleTriangle::SIZE * indicesNum, indices, GL_STATIC_DRAW);
 
-	for (int i = 0; i < indicesNum; i++)
-		indices[0] += vboPointer;
-
-	eboPointer = anim->insertIntoEBO(indicesNum, indices);
-	cout << eboPointer << endl;
 }
 
 void gkom::Abs3DObj::draw() {
 
-	glDrawRangeElements(GL_TRIANGLES,
-						eboPointer,
-						eboPointer + 3 * indicesNum,
-						3 * indicesNum,
-						GL_UNSIGNED_INT,
-						nullptr);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glDrawElements(GL_TRIANGLES, 3*indicesNum, GL_UNSIGNED_INT, nullptr);
+
 }

@@ -16,7 +16,7 @@ namespace gkom {
 		return SimpleTriangle(this->first + n, this->second + n, this->third + n);
 	}
 
-	SimpleTriangle& SimpleTriangle::operator+=(const int &n) {
+	SimpleTriangle &SimpleTriangle::operator+=(const int &n) {
 		this->first += n;
 		this->second += n;
 		this->third += n;
@@ -28,6 +28,7 @@ namespace gkom {
 	unsigned int TexCoord::OFFSET = Color::OFFSET + Color::SIZE;
 
 	void Point3DeX::BindGlVAP() {
+
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, Point3DeX::SIZE, (void *) Point3D::OFFSET);
 		glEnableVertexAttribArray(0);
 

@@ -13,6 +13,8 @@
 namespace gkom {
 	class Abs3DObj {
 	protected:
+
+		GLuint VBO, EBO;
 		Animation* anim;
 
 		struct Point3DeX* vertices;

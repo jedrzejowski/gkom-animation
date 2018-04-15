@@ -95,7 +95,6 @@ void anim::Wrench::initVertices() {
 
 void anim::Wrench::render(gkom::Window *window) {
 
-
 	shader.setMat4("projection", window->getProjectionMatrix());
 	shader.setMat4("model", modelMatrix);
 	shader.setMat4("camera", window->getCameraMatrix());

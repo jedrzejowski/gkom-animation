@@ -10,8 +10,8 @@
 namespace gkom {
 	class Animation {
 	protected:
-		GLuint VAO, VBO, EBO;
-		uint vboCounter, eboCounter;
+		GLuint VAO;
+
 
 	public:
 		Animation();
@@ -24,15 +24,6 @@ namespace gkom {
 			return VAO;
 		}
 
-		uint insertIntoVBO(GLsizei size, const void *data);
-		const GLuint getVBO() const {
-			return VBO;
-		}
-
-		uint insertIntoEBO(GLsizei size, const void *data);
-		const GLuint getEBO() const {
-			return EBO;
-		}
 	};
 }
 
