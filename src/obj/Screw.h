@@ -1,16 +1,14 @@
 //
-// Created by adam on 07.04.18.
+// Created by adam on 16.04.18.
 //
 
 #ifndef GKOM_ANIMATION_SCREW_H
 #define GKOM_ANIMATION_SCREW_H
 
-#include <src/3d/Abs3DObj.h>
-#include <src/3d/Shader.h>
-#include <src/3d/Texture.h>
+#include "src/3d/Abs3DObj.h"
+#include "src/3d/Texture.h"
 
 namespace gkom::anim {
-
 	class Screw : public Abs3DObj {
 	private:
 		Texture texture;

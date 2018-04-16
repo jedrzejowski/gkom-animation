@@ -8,20 +8,20 @@
 using namespace std;
 
 gkom::Abs3DObj::Abs3DObj(Animation *anim) : anim(anim) {
+
+	glGenVertexArrays(1, &VAO);
+	glBindVertexArray(VAO);
 	glGenBuffers(1, &VBO);
 	glGenBuffers(1, &EBO);
-
-	cout<<"VBO:"<<VBO<<endl;
-	cout<<"EBO:"<<EBO<<endl;
 }
 
 gkom::Abs3DObj::~Abs3DObj() {
+	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
 }
 
 void gkom::Abs3DObj::insertObjToBuffers() {
-	cout << "insertObjToBuffers" << vertclesNum << endl;
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * vertclesNum, vertices, GL_STATIC_DRAW);
@@ -29,12 +29,12 @@ void gkom::Abs3DObj::insertObjToBuffers() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, SimpleTriangle::SIZE * indicesNum, indices, GL_STATIC_DRAW);
 
+	Point3DeX::BindGlVAP();
 }
 
 void gkom::Abs3DObj::draw() {
 
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, 3*indicesNum, GL_UNSIGNED_INT, nullptr);
 
 }

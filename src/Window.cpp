@@ -15,7 +15,7 @@
 
 #include "Window.h"
 #include "exception.h"
-#include "src/obj/Screw.h"
+#include "src/obj/Nut.h"
 #include "src/3d/Animation.h"
 
 using namespace gkom;
@@ -46,7 +46,7 @@ Window Window::init() {
 
 Window Window::open() {
 
-	glfwWin = glfwCreateWindow(WIDTH, HEIGHT, "GKOM - Adam Jędrzejowski", nullptr, nullptr);
+	glfwWin = glfwCreateWindow(WIDTH, HEIGHT, "GKOM - Adam Jedrzejowski", nullptr, nullptr);
 
 	if (glfwWin == nullptr)
 		throw exception("Can't open GLFW window");
@@ -74,15 +74,15 @@ Window Window::open() {
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		float radius = 10.0f;
-		float camX = sin(glfwGetTime()) * radius;
-		float camZ = cos(glfwGetTime()) * radius;
-		glm::mat4 view;
-		cameraMatrix = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
-
-//		cameraMatrix = glm::lookAt(glm::vec3(3.0f, 3.0f, 3.0f),
-//								   glm::vec3(0.0f, 0.0f, 0.0f),
-//								   glm::vec3(0.0f, 1.0f, 0.0f));
+//		float radius = 5.0f;
+//		float camX = sin(glfwGetTime()) * radius;
+//		float camZ = cos(glfwGetTime()) * radius;
+//		glm::mat4 view;
+//		cameraMatrix = glm::lookAt(glm::vec3(camX, 5.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+//
+		cameraMatrix = glm::lookAt(glm::vec3(8.0f),
+								   glm::vec3(0.0f, 0.0f, 0.0f),
+								   glm::vec3(0.0f, 1.0f, 0.0f));
 
 		anim.render(this);
 

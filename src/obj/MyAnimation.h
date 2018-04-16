@@ -6,13 +6,15 @@
 #define GKOM_ANIMATION_MYANIMATION_H
 
 #include <src/3d/Animation.h>
-#include "Screw.h"
+#include "Nut.h"
 #include "Wrench.h"
+#include "Screw.h"
 
 namespace gkom::anim {
 	class MyAnimation : public Animation {
 	private:
-		Screw *srubka1, *srubka2, *srubka3;
+		Nut *nakrentka;
+		Screw *sruba;
 		Wrench *klucz;
 
 	public:

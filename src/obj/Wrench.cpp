@@ -24,6 +24,8 @@ anim::Wrench::Wrench(Animation *anim) :
 }
 
 anim::Wrench::~Wrench() {
+	delete vertices;
+	delete indices;
 }
 
 void anim::Wrench::initVertices() {
@@ -94,13 +96,13 @@ void anim::Wrench::initVertices() {
 }
 
 void anim::Wrench::render(gkom::Window *window) {
+	texture.use();
+
+	shader.use();
 
 	shader.setMat4("projection", window->getProjectionMatrix());
 	shader.setMat4("model", modelMatrix);
 	shader.setMat4("camera", window->getCameraMatrix());
-
-	texture.use();
-	shader.use();
 
 	draw();
 }

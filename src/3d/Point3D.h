@@ -88,7 +88,7 @@ namespace gkom {
 
 		static uint SIZE;
 
-		SimpleTriangle() {}
+		SimpleTriangle() : first(0), second(0), third(0) {}
 
 		SimpleTriangle(const uint first, const uint second, const uint third) : first(first), second(second),
 																					  third(third) {}

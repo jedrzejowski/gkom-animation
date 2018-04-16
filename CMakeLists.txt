@@ -22,8 +22,8 @@ add_executable(${APP_TARGET}
 		src/Window.h
 		src/3d/Abs3DObj.cpp
 		src/3d/Abs3DObj.h
-		src/obj/Screw.cpp
-		src/obj/Screw.h
+        src/obj/Nut.cpp
+        src/obj/Nut.h
 		src/3d/Point3D.cpp
 		src/3d/Point3D.h
 		src/3d/Texture.cpp
@@ -31,7 +31,11 @@ add_executable(${APP_TARGET}
 		src/obj/Wrench.cpp
 		src/obj/Wrench.h
 		src/3d/Animation.cpp
-		src/3d/Animation.h src/obj/MyAnimation.cpp src/obj/MyAnimation.h)
+		src/3d/Animation.h
+		src/obj/MyAnimation.cpp
+		src/obj/MyAnimation.h
+		src/obj/Screw.cpp
+		src/obj/Screw.h)
 
 # glfw
 find_package(glfw3 REQUIRED)
