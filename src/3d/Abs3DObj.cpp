@@ -36,6 +36,12 @@ void gkom::Abs3DObj::insertObjToBuffers() {
 void gkom::Abs3DObj::draw() {
 
 	glBindVertexArray(VAO);
-	glDrawElements(GL_TRIANGLES, 3*indicesNum, GL_UNSIGNED_INT, nullptr);
+	glDrawElements(GL_TRIANGLES, 3 * indicesNum, GL_UNSIGNED_INT, nullptr);
+
+}
+
+void gkom::Abs3DObj::draw(uint from, uint count) {
+	glBindVertexArray(VAO);
+	glDrawRangeElements(GL_TRIANGLES, 3 * from, 3 * (from + count) - 1, 3 * count, GL_UNSIGNED_INT, nullptr);
 
 }

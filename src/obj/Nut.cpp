@@ -16,7 +16,7 @@ anim::Nut::Nut(Animation *anim) :
 		shader("basic", "basic") {
 
 
-	texture = Texture("blocks/iron_block.png");
+	texture = Texture("iron.png");
 	modelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f));
 
 	initVertices();

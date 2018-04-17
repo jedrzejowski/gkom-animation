@@ -22,6 +22,7 @@ namespace gkom {
 		uint indicesNum;
 
 		void draw();
+		void draw(uint from, uint count);
 	public:
 		glm::mat4 modelMatrix;
 

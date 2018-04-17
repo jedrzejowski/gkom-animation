@@ -29,8 +29,8 @@ gkom::anim::MyAnimation::MyAnimation() {
 	kluczM4 = glm::rotate(kluczM4, 3.14f / 2, glm::vec3(1.0, 0.0, 0.0));
 	kluczM4 = glm::scale(kluczM4, glm::vec3(1.67f, 1.67f, 1.33f));
 
-	podkladka->modelMatrix = glm::translate(podkladka->modelMatrix, glm::vec3(-5.0f, -10.0f, -5.0f));
-	podkladka->modelMatrix = glm::scale(podkladka->modelMatrix, glm::vec3(10.0f, 10.0f, 10.0f));
+	//podkladka->modelMatrix = glm::translate(podkladka->modelMatrix, glm::vec3(-5.0f, -15.0f, -5.0f));
+	podkladka->modelMatrix = glm::scale(podkladka->modelMatrix, glm::vec3(50.0f));
 	podkladka->modelMatrix = glm::rotate(podkladka->modelMatrix, 3.14f / 25, glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
@@ -48,9 +48,9 @@ void gkom::anim::MyAnimation::render(gkom::Window *window) {
 	nakrentka->modelMatrix = glm::rotate(nakrentkaM4, angle, glm::vec3(0.0, 0.0, 1.0));
 
 	podkladka->render(window);
-//	nakrentka->render(window);
-//	sruba->render(window);
-//	klucz->render(window);
+	nakrentka->render(window);
+	sruba->render(window);
+	klucz->render(window);
 
 }
 

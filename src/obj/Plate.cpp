@@ -11,7 +11,8 @@ anim::Plate::Plate(gkom::Animation *anim) :
 		Abs3DObj(anim),
 		shader("basic", "basic") {
 
-	texture = Texture("wood.png");
+	textureWood = Texture("wood.png");
+	textureBricks = Texture("brick.png");
 	modelMatrix = glm::mat4(1.0f);
 
 	initVertices();
@@ -25,40 +26,45 @@ anim::Plate::~Plate() {
 
 void anim::Plate::initVertices() {
 
+	float texScale = 10.0f;
+
 	uint I = 0;
 	float r = 1.0f, x, y, z;
 
 	verticlesNum = 4 * 6;
 	vertices = new Point3DeX[verticlesNum]{
+			//Prawa
 			Point3DeX(-0.5f, -0.5f, -0.5f, TexCoord(0.0f, 0.0f)),
-			Point3DeX(0.5f, -0.5f, -0.5f, TexCoord(1.0f, 0.0f)),
-			Point3DeX(-0.5f, 0.5f, -0.5f, TexCoord(0.0f, 1.0f)),
-			Point3DeX(0.5f, 0.5f, -0.5f, TexCoord(1.0f, 1.0f)),
+			Point3DeX(0.5f, -0.5f, -0.5f, TexCoord(texScale, 0.0f)),
+			Point3DeX(-0.5f, 0.5f, -0.5f, TexCoord(0.0f, texScale)),
+			Point3DeX(0.5f, 0.5f, -0.5f, TexCoord(texScale, texScale)),
 
 			Point3DeX(-0.5f, -0.5f, 0.5f, TexCoord(0.0f, 0.0f)),
-			Point3DeX(0.5f, -0.5f, 0.5f, TexCoord(1.0f, 0.0f)),
-			Point3DeX(-0.5f, 0.5f, 0.5f, TexCoord(0.0f, 1.0f)),
-			Point3DeX(0.5f, 0.5f, 0.5f, TexCoord(1.0f, 1.0f)),
+			Point3DeX(0.5f, -0.5f, 0.5f, TexCoord(texScale, 0.0f)),
+			Point3DeX(-0.5f, 0.5f, 0.5f, TexCoord(0.0f, texScale)),
+			Point3DeX(0.5f, 0.5f, 0.5f, TexCoord(texScale, texScale)),
 
+			//Lewa
 			Point3DeX(-0.5f, 0.5f, 0.5f, TexCoord(0.0f, 0.0f)),
-			Point3DeX(-0.5f, -0.5f, 0.5f, TexCoord(1.0f, 0.0f)),
-			Point3DeX(-0.5f, 0.5f, -0.5f, TexCoord(0.0f, 1.0f)),
-			Point3DeX(-0.5f, -0.5f, -0.5f, TexCoord(1.0f, 1.0f)),
+			Point3DeX(-0.5f, 0.5f, -0.5f, TexCoord(texScale, 0.0f)),
+			Point3DeX(-0.5f, -0.5f, 0.5f, TexCoord(0.0f, texScale)),
+			Point3DeX(-0.5f, -0.5f, -0.5f, TexCoord(texScale, texScale)),
 
-			Point3DeX(0.5f, 0.5f, 0.5f, TexCoord(1.0f, 1.0f)),
-			Point3DeX(0.5f, -0.5f, 0.5f, TexCoord(0.0f, 1.0f)),
-			Point3DeX(0.5f, 0.5f, -0.5f, TexCoord(1.0f, 0.0f)),
+			Point3DeX(0.5f, 0.5f, 0.5f, TexCoord(texScale, texScale)),
+			Point3DeX(0.5f, -0.5f, 0.5f, TexCoord(0.0f, texScale)),
+			Point3DeX(0.5f, 0.5f, -0.5f, TexCoord(texScale, 0.0f)),
 			Point3DeX(0.5f, -0.5f, -0.5f, TexCoord(0.0f, 0.0f)),
 
+			//Dolna
 			Point3DeX(-0.5f, -0.5f, -0.5f, TexCoord(0.0f, 0.0f)),
-			Point3DeX(0.5f, -0.5f, -0.5f, TexCoord(1.0f, 0.0f)),
-			Point3DeX(-0.5f, -0.5f, 0.5f, TexCoord(0.0f, 1.0f)),
-			Point3DeX(0.5f, -0.5f, 0.5f, TexCoord(1.0f, 1.0f)),
+			Point3DeX(0.5f, -0.5f, -0.5f, TexCoord(texScale, 0.0f)),
+			Point3DeX(-0.5f, -0.5f, 0.5f, TexCoord(0.0f, texScale)),
+			Point3DeX(0.5f, -0.5f, 0.5f, TexCoord(texScale, texScale)),
 
 			Point3DeX(-0.5f, 0.5f, -0.5f, TexCoord(0.0f, 0.0f)),
-			Point3DeX(0.5f, 0.5f, -0.5f, TexCoord(1.0f, 0.0f)),
-			Point3DeX(-0.5f, 0.5f, 0.5f, TexCoord(0.0f, 1.0f)),
-			Point3DeX(0.5f, 0.5f, 0.5f, TexCoord(1.0f, 1.0f)),
+			Point3DeX(0.5f, 0.5f, -0.5f, TexCoord(texScale, 0.0f)),
+			Point3DeX(-0.5f, 0.5f, 0.5f, TexCoord(0.0f, texScale)),
+			Point3DeX(0.5f, 0.5f, 0.5f, TexCoord(texScale, texScale)),
 	};
 
 	I = 0;
@@ -72,7 +78,6 @@ void anim::Plate::initVertices() {
 }
 
 void anim::Plate::render(Window *window) {
-	texture.use();
 
 	shader.use();
 
@@ -80,5 +85,9 @@ void anim::Plate::render(Window *window) {
 	shader.setMat4("model", modelMatrix);
 	shader.setMat4("camera", window->getCameraMatrix());
 
-	draw();
+	textureWood.use();
+	draw(0,1);
+	draw(5,6);
+	textureBricks.use();
+	draw(9,10);
 }
