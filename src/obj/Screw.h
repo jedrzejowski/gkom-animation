@@ -10,7 +10,7 @@
 
 namespace gkom::anim {
 	class Screw : public Abs3DObj {
-	private:
+	protected:
 		Texture texture;
 		Shader shader;
 
@@ -21,7 +21,7 @@ namespace gkom::anim {
 
 		~Screw();
 
-		void render(Window* window) override;
+		virtual void render(Window* window);
 	};
 }
 

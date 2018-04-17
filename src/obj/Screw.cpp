@@ -14,7 +14,7 @@ anim::Screw::Screw(gkom::Animation *anim) :
 		Abs3DObj(anim),
 		shader("basic", "basic") {
 
-	texture = Texture("metal.jpeg");
+	texture = Texture("iron.png");
 	modelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f));
 
 	initVertices();
@@ -23,15 +23,16 @@ anim::Screw::Screw(gkom::Animation *anim) :
 }
 
 anim::Screw::~Screw() {
-
+	delete vertices;
+	delete indices;
 }
 
 void anim::Screw::initVertices() {
 	Color color = Color(1.0f, 0.0f, 0.0f);
 	uint accuracy = 16;
 
-	vertclesNum = accuracy * 2 + 2;
-	vertices = new Point3DeX[vertclesNum];
+	verticlesNum = accuracy * 2 + 2;
+	vertices = new Point3DeX[verticlesNum];
 
 	uint I = 0;
 

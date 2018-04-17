@@ -15,7 +15,7 @@ anim::Wrench::Wrench(Animation *anim) :
 		Abs3DObj(anim),
 		shader("basic", "basic") {
 
-	texture = Texture("metal.jpeg");
+	texture = Texture("iron.png");
 	modelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f));
 
 	initVertices();
@@ -31,8 +31,8 @@ anim::Wrench::~Wrench() {
 void anim::Wrench::initVertices() {
 	Color color = Color(1.0f, 0.0f, 0.0f);
 
-	vertclesNum = (8 + 4) * 2;
-	vertices = new Point3DeX[vertclesNum];
+	verticlesNum = (8 + 4) * 2;
+	vertices = new Point3DeX[verticlesNum];
 
 	unsigned int I = 0;
 

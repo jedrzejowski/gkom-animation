@@ -75,6 +75,8 @@ namespace gkom {
 
 		Point3DeX(GLfloat X, GLfloat Y, GLfloat Z, Color c) : point(X, Y, Z), color(c) {}
 
+		Point3DeX(GLfloat X, GLfloat Y, GLfloat Z, TexCoord t) : point(X, Y, Z), texture(t) {}
+
 		Point3DeX(GLfloat X, GLfloat Y, GLfloat Z, Color c, TexCoord t) : point(X, Y, Z), color(c), texture(t) {}
 
 		Point3DeX(GLfloat X, GLfloat Y, GLfloat Z, GLfloat R, GLfloat G, GLfloat B) : point(X, Y, Z),
@@ -91,9 +93,11 @@ namespace gkom {
 		SimpleTriangle() : first(0), second(0), third(0) {}
 
 		SimpleTriangle(const uint first, const uint second, const uint third) : first(first), second(second),
-																					  third(third) {}
-		SimpleTriangle operator+(const int& n);
-		SimpleTriangle& operator+=(const int& n);
+																				third(third) {}
+
+		SimpleTriangle operator+(const int &n);
+
+		SimpleTriangle &operator+=(const int &n);
 	};
 }
 #endif //GKOM_ANIMATION_POINT_H

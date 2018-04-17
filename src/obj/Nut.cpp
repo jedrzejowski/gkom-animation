@@ -16,7 +16,7 @@ anim::Nut::Nut(Animation *anim) :
 		shader("basic", "basic") {
 
 
-	texture = Texture("metal.jpeg");
+	texture = Texture("blocks/iron_block.png");
 	modelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f));
 
 	initVertices();
@@ -37,8 +37,8 @@ Point3DeX createPoint3DeX(float x, float y, float z, Color color) {
 void anim::Nut::initVertices() {
 	Color color = Color(1.0f, 0.0f, 0.0f);
 
-	vertclesNum = 8 * 2 * 2;
-	vertices = new Point3DeX[vertclesNum];
+	verticlesNum = 8 * 2 * 2;
+	vertices = new Point3DeX[verticlesNum];
 
 	unsigned int I = 0;
 

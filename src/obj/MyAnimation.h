@@ -9,6 +9,7 @@
 #include "Nut.h"
 #include "Wrench.h"
 #include "Screw.h"
+#include "Plate.h"
 
 namespace gkom::anim {
 	class MyAnimation : public Animation {
@@ -16,10 +17,15 @@ namespace gkom::anim {
 		Nut *nakrentka;
 		Screw *sruba;
 		Wrench *klucz;
+		Plate *podkladka;
+
+		glm::mat4 nakrentkaM4, kluczM4;
 
 	public:
 		MyAnimation();
+
 		~MyAnimation();
+
 		void render(Window *window);
 	};
 }

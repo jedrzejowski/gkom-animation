@@ -24,12 +24,13 @@ gkom::Abs3DObj::~Abs3DObj() {
 void gkom::Abs3DObj::insertObjToBuffers() {
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * vertclesNum, vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * verticlesNum, vertices, GL_STATIC_DRAW);
+
+	Point3DeX::BindGlVAP();
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, SimpleTriangle::SIZE * indicesNum, indices, GL_STATIC_DRAW);
 
-	Point3DeX::BindGlVAP();
 }
 
 void gkom::Abs3DObj::draw() {

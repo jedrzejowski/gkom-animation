@@ -18,7 +18,7 @@ namespace gkom {
 
 		struct Point3DeX* vertices;
 		struct SimpleTriangle* indices;
-		uint vertclesNum;
+		uint verticlesNum;
 		uint indicesNum;
 
 		void draw();
@@ -26,6 +26,7 @@ namespace gkom {
 		glm::mat4 modelMatrix;
 
 		Abs3DObj(Animation* anim);
+
 		~Abs3DObj();
 		virtual void render(Window *window) = 0;
 
