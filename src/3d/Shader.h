@@ -8,21 +8,14 @@
 #include <string>
 #include <GL/glew.h>
 #include <glm/glm.hpp>
+#include "Light.h"
 
-namespace gkom {
+namespace gengine {
 
 
 	struct Material {
 		glm::vec3 specular;
 		float shininess;
-	};
-
-	struct Light {
-		glm::vec3 position;
-
-		glm::vec3 ambient;
-		glm::vec3 diffuse;
-		glm::vec3 specular;
 	};
 
 	class Shader {

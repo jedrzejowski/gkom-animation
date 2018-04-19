@@ -7,7 +7,7 @@
 #include <src/exception.h>
 #include "Texture.h"
 
-using namespace gkom;
+using namespace gengine;
 
 Texture::Texture() = default;
 
@@ -44,5 +44,6 @@ void Texture::loadTexture(string path) {
 }
 
 void Texture::use() {
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, getID());
 }

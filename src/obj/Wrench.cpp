@@ -21,6 +21,8 @@ anim::Wrench::Wrench(Animation *anim) :
 	initVertices();
 
 	insertObjToBuffers();
+
+
 }
 
 anim::Wrench::~Wrench() {
@@ -94,13 +96,13 @@ void anim::Wrench::initVertices() {
 
 	indicesNum = I;
 
-
-	Point3DeX::ClacNormals(vertices, verticlesNum, indices, indicesNum);
+	Point3DeX::CalcNormals(vertices, verticlesNum, indices, indicesNum);
 }
 
 void anim::Wrench::render(gkom::Window *window) {
-	texture.use();
+
 	anim->getShader().setMat4("model", modelMatrix);
+	texture.use();
 
 	draw();
 }

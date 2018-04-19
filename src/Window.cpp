@@ -80,9 +80,9 @@ Window Window::open() {
 //		glm::mat4 view;
 //		cameraMatrix = glm::lookAt(glm::vec3(camX, 5.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 //
-		cameraMatrix = glm::lookAt(glm::vec3(4.0f),
-								   glm::vec3(0.0f, 0.0f, 0.0f),
-								   glm::vec3(0.0f, 1.0f, 0.0f));
+		camera.position = glm::vec3(4.0f);
+		camera.lookAt = glm::vec3(0.0f, 0.0f, 0.0f);
+		camera.up = glm::vec3(0.0f, 1.0f, 0.0f);
 
 		anim.render(this);
 

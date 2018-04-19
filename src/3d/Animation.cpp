@@ -6,7 +6,7 @@
 
 #include "Animation.h"
 
-using namespace gkom;
+using namespace gengine;
 
 Animation::Animation() {
 

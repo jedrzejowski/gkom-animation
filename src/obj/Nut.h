@@ -9,6 +9,8 @@
 #include <src/3d/Shader.h>
 #include <src/3d/Texture.h>
 
+using namespace gengine;
+
 namespace gkom::anim {
 
 	class Nut : public Abs3DObj {

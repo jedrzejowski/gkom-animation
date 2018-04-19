@@ -9,8 +9,9 @@
 #include "Screw.h"
 
 using namespace gkom;
+using namespace gengine;
 
-anim::Screw::Screw(gkom::Animation *anim) :
+anim::Screw::Screw(Animation *anim) :
 		Abs3DObj(anim){
 
 	texture = Texture("iron.png");

@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace gkom {
+namespace gengine {
 
 	class Texture {
 	private:

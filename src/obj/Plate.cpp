@@ -6,8 +6,9 @@
 #include "Plate.h"
 
 using namespace gkom;
+using namespace gengine;
 
-anim::Plate::Plate(gkom::Animation *anim) :
+anim::Plate::Plate(Animation *anim) :
 		Abs3DObj(anim){
 
 	textureWood = Texture("wood.png");
