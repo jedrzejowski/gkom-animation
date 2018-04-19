@@ -6,12 +6,14 @@
 #include <glm/gtx/transform.hpp>
 
 #include <src/3d/Point3D.h>
-#include <src/lib/glm_ext.hpp>
 #include "MyAnimation.h"
 #include "Screw.h"
 
 
 gkom::anim::MyAnimation::MyAnimation() {
+	shader = new Shader("basic", "basic");
+	light = new Light();
+
 	klucz = new Wrench(this);
 	nakrentka = new Nut(this);
 	sruba = new Screw(this);
@@ -29,16 +31,20 @@ gkom::anim::MyAnimation::MyAnimation() {
 	kluczM4 = glm::rotate(kluczM4, 3.14f / 2, glm::vec3(1.0, 0.0, 0.0));
 	kluczM4 = glm::scale(kluczM4, glm::vec3(1.67f, 1.67f, 1.33f));
 
-	//podkladka->modelMatrix = glm::translate(podkladka->modelMatrix, glm::vec3(-5.0f, -15.0f, -5.0f));
 	podkladka->modelMatrix = glm::scale(podkladka->modelMatrix, glm::vec3(50.0f));
 	podkladka->modelMatrix = glm::rotate(podkladka->modelMatrix, 3.14f / 25, glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
 gkom::anim::MyAnimation::~MyAnimation() {
 	delete nakrentka, klucz, sruba, podkladka;
+	delete shader;
 }
 
 void gkom::anim::MyAnimation::render(gkom::Window *window) {
+
+	shader->use();
+	shader->setMat4("projection", window->getProjectionMatrix());
+	shader->setMat4("camera", window->getCameraMatrix());
 
 	float angle = glfwGetTime() / 5;
 
@@ -51,6 +57,5 @@ void gkom::anim::MyAnimation::render(gkom::Window *window) {
 	nakrentka->render(window);
 	sruba->render(window);
 	klucz->render(window);
-
 }
 

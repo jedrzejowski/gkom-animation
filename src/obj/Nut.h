@@ -14,7 +14,6 @@ namespace gkom::anim {
 	class Nut : public Abs3DObj {
 	private:
 		Texture texture;
-		Shader shader;
 
 		void initVertices();
 

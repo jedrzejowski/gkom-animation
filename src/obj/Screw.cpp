@@ -11,8 +11,7 @@
 using namespace gkom;
 
 anim::Screw::Screw(gkom::Animation *anim) :
-		Abs3DObj(anim),
-		shader("basic", "basic") {
+		Abs3DObj(anim){
 
 	texture = Texture("iron.png");
 	modelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f));
@@ -23,8 +22,7 @@ anim::Screw::Screw(gkom::Animation *anim) :
 }
 
 anim::Screw::~Screw() {
-	delete vertices;
-	delete indices;
+	delete vertices, indices;
 }
 
 void anim::Screw::initVertices() {
@@ -47,7 +45,8 @@ void anim::Screw::initVertices() {
 
 		for (uint a = 0; a < accuracy; a++) {
 			angle = a * 360 / accuracy * deg2Rad;
-			vertices[I++] = Point3DeX(ro * sinf(angle), ro * cosf(angle), z, color);
+			vertices[I++] = Point3DeX(ro * sinf(angle), ro * cosf(angle), z, color,
+									  TexCoord(1.0f / accuracy * a, z * 20));
 		}
 
 		z += 0.5f;
@@ -74,14 +73,9 @@ void anim::Screw::initVertices() {
 }
 
 void anim::Screw::render(gkom::Window *window) {
+
+	anim->getShader().setMat4("model", modelMatrix);
 	texture.use();
 
-	shader.use();
-
-	shader.setMat4("projection", window->getProjectionMatrix());
-	shader.setMat4("model", modelMatrix);
-	shader.setMat4("camera", window->getCameraMatrix());
-
 	draw();
-
 }

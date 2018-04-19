@@ -8,14 +8,14 @@
 #include <src/3d/Point3D.h>
 
 #include "Wrench.h"
+#include "createPoint3DeX.h"
 
 using namespace gkom;
 
 anim::Wrench::Wrench(Animation *anim) :
-		Abs3DObj(anim),
-		shader("basic", "basic") {
+		Abs3DObj(anim) {
 
-	texture = Texture("iron.png");
+	texture = Texture("metal.jpeg");
 	modelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f));
 
 	initVertices();
@@ -43,21 +43,21 @@ void anim::Wrench::initVertices() {
 	//Punkty
 	for (int i = 0; i < 2; i++) {
 
-		vertices[I++] = Point3DeX(a, b, z, color, TexCoord((a + 1) / 2, (b + 1) / 2));
-		vertices[I++] = Point3DeX(b, a, z, color, TexCoord((b + 1) / 2, (a + 1) / 2));
-		vertices[I++] = Point3DeX(b, -a, z, color, TexCoord((b + 1) / 2, (-a + 1) / 2));
-		vertices[I++] = Point3DeX(a, -b, z, color, TexCoord((a + 1) / 2, (-b + 1) / 2));
+		vertices[I++] = createPoint3DeX(a, b, z, color);
+		vertices[I++] = createPoint3DeX(b, a, z, color);
+		vertices[I++] = createPoint3DeX(b, -a, z, color);
+		vertices[I++] = createPoint3DeX(a, -b, z, color);
 
-		vertices[I++] = Point3DeX(a, -b * 5, z, color);
-		vertices[I++] = Point3DeX(-a, -b * 5, z, color);
+		vertices[I++] = createPoint3DeX(a, -b * 5, z, color);
+		vertices[I++] = createPoint3DeX(-a, -b * 5, z, color);
 
-		vertices[I++] = Point3DeX(-a, -b, z, color, TexCoord((-a + 1) / 2, (-b + 1) / 2));
-		vertices[I++] = Point3DeX(-b, -a, z, color, TexCoord((-b + 1) / 2, (-a + 1) / 2));
-		vertices[I++] = Point3DeX(-b, a, z, color, TexCoord((-b + 1) / 2, (a + 1) / 2));
-		vertices[I++] = Point3DeX(-a, b, z, color, TexCoord((-a + 1) / 2, (b + 1) / 2));
+		vertices[I++] = createPoint3DeX(-a, -b, z, color);
+		vertices[I++] = createPoint3DeX(-b, -a, z, color);
+		vertices[I++] = createPoint3DeX(-b, a, z, color);
+		vertices[I++] = createPoint3DeX(-a, b, z, color);
 
-		vertices[I++] = Point3DeX(-a, -a, z, color);
-		vertices[I++] = Point3DeX(a, -a, z, color);
+		vertices[I++] = createPoint3DeX(-a, -a, z, color);
+		vertices[I++] = createPoint3DeX(a, -a, z, color);
 
 		z += 0.5f;
 	}
@@ -93,16 +93,14 @@ void anim::Wrench::initVertices() {
 	indices[I++] = SimpleTriangle(wallNum, 0, wallNum * 2 - 1);
 
 	indicesNum = I;
+
+
+	Point3DeX::ClacNormals(vertices, verticlesNum, indices, indicesNum);
 }
 
 void anim::Wrench::render(gkom::Window *window) {
 	texture.use();
-
-	shader.use();
-
-	shader.setMat4("projection", window->getProjectionMatrix());
-	shader.setMat4("model", modelMatrix);
-	shader.setMat4("camera", window->getCameraMatrix());
+	anim->getShader().setMat4("model", modelMatrix);
 
 	draw();
 }

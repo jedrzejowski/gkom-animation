@@ -7,13 +7,13 @@
 #include <src/3d/Point3D.h>
 
 #include "Nut.h"
+#include "createPoint3DeX.h"
 
 using namespace gkom;
 using namespace std;
 
 anim::Nut::Nut(Animation *anim) :
-		Abs3DObj(anim),
-		shader("basic", "basic") {
+		Abs3DObj(anim){
 
 
 	texture = Texture("iron.png");
@@ -25,12 +25,7 @@ anim::Nut::Nut(Animation *anim) :
 }
 
 anim::Nut::~Nut() {
-	delete vertices;
-	delete indices;
-}
-
-Point3DeX createPoint3DeX(float x, float y, float z, Color color) {
-	return Point3DeX(x, y, z, color, TexCoord((x + 1) / 2, (y + 1) / 2));
+	delete vertices, indices;
 }
 
 
@@ -108,13 +103,8 @@ void anim::Nut::initVertices() {
 }
 
 void anim::Nut::render(Window *window) {
+	anim->getShader().setMat4("model", modelMatrix);
 	texture.use();
-
-	shader.use();
-
-	shader.setMat4("projection", window->getProjectionMatrix());
-	shader.setMat4("model", modelMatrix);
-	shader.setMat4("camera", window->getCameraMatrix());
 
 	draw();
 }

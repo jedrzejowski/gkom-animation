@@ -12,7 +12,6 @@ namespace gkom::anim {
 	class Screw : public Abs3DObj {
 	protected:
 		Texture texture;
-		Shader shader;
 
 		void initVertices();
 

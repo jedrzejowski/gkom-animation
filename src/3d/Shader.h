@@ -10,6 +10,21 @@
 #include <glm/glm.hpp>
 
 namespace gkom {
+
+
+	struct Material {
+		glm::vec3 specular;
+		float shininess;
+	};
+
+	struct Light {
+		glm::vec3 position;
+
+		glm::vec3 ambient;
+		glm::vec3 diffuse;
+		glm::vec3 specular;
+	};
+
 	class Shader {
 		GLuint shaderId;
 	public:
@@ -39,6 +54,8 @@ namespace gkom {
 		void setMat2(const std::string &name, const glm::mat2 &mat) const;
 		void setMat3(const std::string &name, const glm::mat3 &mat) const;
 		void setMat4(const std::string &name, const glm::mat4 &mat) const;
+
+		void setLight(const std::string &name, const Light &light) const;
 	};
 }
 

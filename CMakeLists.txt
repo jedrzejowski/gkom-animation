@@ -35,7 +35,8 @@ add_executable(${APP_TARGET}
 		src/obj/MyAnimation.cpp
 		src/obj/MyAnimation.h
 		src/obj/Screw.cpp
-		src/obj/Screw.h src/lib/glm_ext.hpp src/obj/Plate.cpp src/obj/Plate.h)
+		src/obj/Screw.h
+		src/obj/Plate.cpp src/obj/Plate.h src/obj/createPoint3DeX.h src/3d/Camera.cpp src/3d/Camera.h src/3d/Light.cpp src/3d/Light.h)
 
 # glfw
 find_package(glfw3 REQUIRED)

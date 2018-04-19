@@ -8,8 +8,7 @@
 using namespace gkom;
 
 anim::Plate::Plate(gkom::Animation *anim) :
-		Abs3DObj(anim),
-		shader("basic", "basic") {
+		Abs3DObj(anim){
 
 	textureWood = Texture("wood.png");
 	textureBricks = Texture("brick.png");
@@ -21,7 +20,7 @@ anim::Plate::Plate(gkom::Animation *anim) :
 }
 
 anim::Plate::~Plate() {
-
+	delete vertices, indices;
 }
 
 void anim::Plate::initVertices() {
@@ -79,11 +78,7 @@ void anim::Plate::initVertices() {
 
 void anim::Plate::render(Window *window) {
 
-	shader.use();
-
-	shader.setMat4("projection", window->getProjectionMatrix());
-	shader.setMat4("model", modelMatrix);
-	shader.setMat4("camera", window->getCameraMatrix());
+	anim->getShader().setMat4("model", modelMatrix);
 
 	textureWood.use();
 	draw(0,1);

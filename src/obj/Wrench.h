@@ -12,7 +12,6 @@ namespace gkom::anim {
 
 	class Wrench : public Abs3DObj {
 	private:
-		Shader shader;
 		Texture texture;
 
 		void initVertices();

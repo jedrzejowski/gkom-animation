@@ -8,7 +8,7 @@
 
 using namespace gkom;
 
-Animation::Animation(){
+Animation::Animation() {
 
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);

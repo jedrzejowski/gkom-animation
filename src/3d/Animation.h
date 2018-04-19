@@ -8,10 +8,13 @@
 #include "src/Window.h"
 
 namespace gkom {
+
 	class Animation {
+
 	protected:
 		GLuint VAO;
-
+		Light* light;
+		Shader* shader;
 
 	public:
 		Animation();
@@ -24,6 +27,13 @@ namespace gkom {
 			return VAO;
 		}
 
+		const Light& getLight() const{
+			return *light;
+		}
+
+		const Shader& getShader() const{
+			return *shader;
+		}
 	};
 }
 

@@ -7,6 +7,7 @@
 
 #include <GL/glew.h>
 #include <zconf.h>
+#include <glm/vec3.hpp>
 
 namespace gkom {
 
@@ -14,17 +15,31 @@ namespace gkom {
 		static uint SIZE;
 		static uint OFFSET;
 
-		GLfloat X = 0.0f;
-		GLfloat Y = 0.0f;
-		GLfloat Z = 0.0f;
+		GLfloat x = 0.0f;
+		GLfloat y = 0.0f;
+		GLfloat z = 0.0f;
 
 		Point3D() : Point3D(0.0f, 0.0f) {}
 
-		Point3D(GLfloat X, GLfloat Y) : Point3D(X, Y, 0.0f) {}
+		Point3D(GLfloat x, GLfloat y) : Point3D(x, y, 0.0f) {}
 
-		Point3D(GLfloat X, GLfloat Y, GLfloat Z) : X(X), Y(Y), Z(Z) {}
+		Point3D(GLfloat x, GLfloat y, GLfloat z) : x(x), y(y), z(z) {}
 	};
 
+	struct Normal {
+		static uint SIZE;
+		static uint OFFSET;
+
+		GLfloat x = 0.0f;
+		GLfloat y = 0.0f;
+		GLfloat z = 0.0f;
+
+		Normal() : Normal(0.0f, 0.0f) {}
+
+		Normal(GLfloat x, GLfloat y) : Normal(x, y, 0.0f) {}
+
+		Normal(GLfloat x, GLfloat y, GLfloat z) : x(x), y(y), z(z) {}
+	};
 
 	struct Color {
 		static uint SIZE;
@@ -53,12 +68,30 @@ namespace gkom {
 		TexCoord(GLfloat X, GLfloat Y) : X(X), Y(Y) {}
 	};
 
+	struct SimpleTriangle {
+		uint first;
+		uint second;
+		uint third;
+
+		static uint SIZE;
+
+		SimpleTriangle() : first(0), second(0), third(0) {}
+
+		SimpleTriangle(const uint first, const uint second, const uint third) : first(first), second(second),
+																				third(third) {}
+		SimpleTriangle operator+(const int &n);
+
+		SimpleTriangle &operator+=(const int &n);
+	};
+
 	struct Point3DeX {
 		static uint SIZE;
 
 		static void BindGlVAP();
+		static void ClacNormals(Point3DeX* points, size_t pSize, SimpleTriangle *triangles, size_t tSize);
 
 		Point3D point;
+		Normal normal;
 		Color color;
 		TexCoord texture;
 
@@ -81,23 +114,6 @@ namespace gkom {
 
 		Point3DeX(GLfloat X, GLfloat Y, GLfloat Z, GLfloat R, GLfloat G, GLfloat B) : point(X, Y, Z),
 																					  color(R, G, B) {}
-	};
-
-	struct SimpleTriangle {
-		uint first;
-		uint second;
-		uint third;
-
-		static uint SIZE;
-
-		SimpleTriangle() : first(0), second(0), third(0) {}
-
-		SimpleTriangle(const uint first, const uint second, const uint third) : first(first), second(second),
-																				third(third) {}
-
-		SimpleTriangle operator+(const int &n);
-
-		SimpleTriangle &operator+=(const int &n);
 	};
 }
 #endif //GKOM_ANIMATION_POINT_H

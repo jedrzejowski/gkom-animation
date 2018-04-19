@@ -8,7 +8,6 @@ using namespace std;
 int main() {
 
 	try {
-
 		gkom::Window win = gkom::Window();
 		win.init().open();
 	} catch (std::exception &e) {

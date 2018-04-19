@@ -13,7 +13,6 @@ namespace gkom::anim {
 	class Plate : public Abs3DObj {
 	protected:
 		Texture textureWood, textureBricks;
-		Shader shader;
 
 		void initVertices();
 	public:
