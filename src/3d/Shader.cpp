@@ -6,7 +6,7 @@
 #include "src/exception.h"
 #include "Shader.h"
 
-using namespace gkom;
+using namespace gengine;
 
 GLuint compileShader(const GLchar *shaderCode, GLenum shaderType) {
 	GLuint shader_id = glCreateShader(shaderType);

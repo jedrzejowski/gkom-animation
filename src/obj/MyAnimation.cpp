@@ -12,7 +12,15 @@
 
 gkom::anim::MyAnimation::MyAnimation() {
 	shader = new Shader("basic", "basic");
+	shader->use();
+	shader->setInt("material.diffuse", 0);
+
 	light = new Light();
+	light->position = glm::vec3(2.0f, 2.0f, 2.0f);
+	light->ambient = glm::vec3(0.4f);
+	light->diffuse = glm::vec3(8.5f);
+	light->specular = glm::vec3(8.0f);
+
 
 	klucz = new Wrench(this);
 	nakrentka = new Nut(this);
@@ -42,20 +50,25 @@ gkom::anim::MyAnimation::~MyAnimation() {
 
 void gkom::anim::MyAnimation::render(gkom::Window *window) {
 
-	shader->use();
+
 	shader->setMat4("projection", window->getProjectionMatrix());
-	shader->setMat4("camera", window->getCameraMatrix());
+	shader->setMat4("camera", window->getCamera().getMatrix());
+	shader->setVec3("cameraPos", window->getCamera().position);
+
+	shader->setLight("light", *light);
+
+	shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+	shader->setFloat("material.shininess", 64.0f);
 
 	float angle = glfwGetTime() / 5;
 
 	klucz->modelMatrix = glm::rotate(kluczM4, angle, glm::vec3(0.0, 0.0, 1.0));
 	klucz->modelMatrix = glm::translate(klucz->modelMatrix, glm::vec3(0.0f, -0.8f, 0.0f));
-
 	nakrentka->modelMatrix = glm::rotate(nakrentkaM4, angle, glm::vec3(0.0, 0.0, 1.0));
 
-	podkladka->render(window);
+//	klucz->render(window);
+//	podkladka->render(window);
 	nakrentka->render(window);
-	sruba->render(window);
-	klucz->render(window);
+//	sruba->render(window);
 }
 

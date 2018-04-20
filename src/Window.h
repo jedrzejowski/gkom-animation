@@ -8,15 +8,19 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <src/3d/Camera.h>
 
 #include "src/3d/Shader.h"
+
+using namespace gengine;
 
 namespace gkom {
 	class Window {
 	private:
 		const GLuint WIDTH = 800, HEIGHT = 600;
 		GLFWwindow *glfwWin;
-		glm::mat4 cameraMatrix, projectionMatrix;
+		glm::mat4 projectionMatrix;
+		Camera camera;
 
 		void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
 		void windowLoop();
@@ -26,11 +30,11 @@ namespace gkom {
 		Window init();
 		Window open();
 
-		const glm::mat4 getCameraMatrix() const {
-			return cameraMatrix;
+		Camera getCamera() {
+			return camera;
 		}
 
-		const glm::mat4 getProjectionMatrix() const {
+		glm::mat4 getProjectionMatrix() {
 			return projectionMatrix;
 		}
 	};

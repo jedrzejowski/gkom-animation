@@ -9,7 +9,7 @@
 #include <zconf.h>
 #include <glm/vec3.hpp>
 
-namespace gkom {
+namespace gengine {
 
 	struct Point3D {
 		static uint SIZE;
@@ -88,7 +88,7 @@ namespace gkom {
 		static uint SIZE;
 
 		static void BindGlVAP();
-		static void ClacNormals(Point3DeX* points, size_t pSize, SimpleTriangle *triangles, size_t tSize);
+		static void CalcNormals(Point3DeX *points, size_t pSize, SimpleTriangle *triangles, size_t tSize);
 
 		Point3D point;
 		Normal normal;

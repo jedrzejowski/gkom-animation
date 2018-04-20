@@ -6,8 +6,9 @@
 #include "Point3D.h"
 
 using namespace std;
+using namespace gengine;
 
-gkom::Abs3DObj::Abs3DObj(Animation *anim) : anim(anim) {
+Abs3DObj::Abs3DObj(Animation *anim) : anim(anim) {
 
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
@@ -15,13 +16,13 @@ gkom::Abs3DObj::Abs3DObj(Animation *anim) : anim(anim) {
 	glGenBuffers(1, &EBO);
 }
 
-gkom::Abs3DObj::~Abs3DObj() {
+Abs3DObj::~Abs3DObj() {
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
 }
 
-void gkom::Abs3DObj::insertObjToBuffers() {
+void Abs3DObj::insertObjToBuffers() {
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * verticlesNum, vertices, GL_STATIC_DRAW);
@@ -33,14 +34,14 @@ void gkom::Abs3DObj::insertObjToBuffers() {
 
 }
 
-void gkom::Abs3DObj::draw() {
+void Abs3DObj::draw() {
 
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, 3 * indicesNum, GL_UNSIGNED_INT, nullptr);
 
 }
 
-void gkom::Abs3DObj::draw(uint from, uint count) {
+void Abs3DObj::draw(uint from, uint count) {
 	glBindVertexArray(VAO);
 	glDrawRangeElements(GL_TRIANGLES, 3 * from, 3 * (from + count) - 1, 3 * count, GL_UNSIGNED_INT, nullptr);
 

@@ -7,7 +7,7 @@
 
 #include "src/Window.h"
 
-namespace gkom {
+namespace gengine {
 
 	class Animation {
 
@@ -21,7 +21,7 @@ namespace gkom {
 
 		~Animation();
 
-		virtual void render(Window *window) = 0;
+		virtual void render(gkom::Window *window) = 0;
 
 		const GLuint getVAO() const {
 			return VAO;

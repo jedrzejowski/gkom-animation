@@ -11,6 +11,7 @@
 
 using namespace gkom;
 using namespace std;
+using namespace gengine;
 
 anim::Nut::Nut(Animation *anim) :
 		Abs3DObj(anim){

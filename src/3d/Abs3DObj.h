@@ -9,7 +9,7 @@
 #include "src/Window.h"
 #include "Animation.h"
 
-namespace gkom {
+namespace gengine {
 	class Abs3DObj {
 	protected:
 
@@ -29,7 +29,7 @@ namespace gkom {
 		Abs3DObj(Animation* anim);
 
 		~Abs3DObj();
-		virtual void render(Window *window) = 0;
+		virtual void render(gkom::Window *window) = 0;
 
 		void insertObjToBuffers();
 
