@@ -11,36 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b4a3897-b1ad-4537-9896-5c3abb4307df" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Camera.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Camera.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Light.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Light.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/obj/createPoint3DeX.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fragment/basic.frag" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/fragment/basic.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/vertex/basic.vert" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/vertex/basic.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Animation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Animation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Animation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Animation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Point3D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Point3D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Point3D.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Point3D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Shader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Shader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/glm_ext.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/MyAnimation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/MyAnimation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Nut.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Nut.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Nut.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Nut.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Plate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Plate.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Plate.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Plate.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Screw.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Screw.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Screw.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Screw.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Wrench.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Wrench.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obj/Wrench.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Wrench.h" afterDir="false" />
-    </list>
+    <list default="true" id="5b4a3897-b1ad-4537-9896-5c3abb4307df" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,7 +38,7 @@
       <file leaf-file-name="MyAnimation.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="56">
               <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
               <folding>
                 <element signature="e#39#61#0" expanded="true" />
@@ -463,11 +434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523887505820</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Prace nad światłem">
+      <created>1524169149998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524169149998</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105435000" />
+    <option name="totallyTimeSpent" value="105537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="769" extended-state="6" />
@@ -478,10 +456,10 @@
       <window_info anchor="bottom" id="CMake" order="11" weight="0.3257732" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3271028" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3271028" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3271028" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33229813" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3317757" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -513,7 +491,8 @@
     <MESSAGE value="Commit bezpieczeństwa" />
     <MESSAGE value="Nie rozumiem tego Xd" />
     <MESSAGE value="Działa tak jak chce tego ja xD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Działa tak jak chce tego ja xD" />
+    <MESSAGE value="Prace nad światłem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prace nad światłem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -909,7 +888,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="56">
           <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
           <folding>
             <element signature="e#39#61#0" expanded="true" />
