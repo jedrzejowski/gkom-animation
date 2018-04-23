@@ -8,10 +8,10 @@
 #include <string>
 #include <GL/glew.h>
 #include <glm/glm.hpp>
-#include "Light.h"
+
+#include "gEngine.h"
 
 namespace gengine {
-
 
 	struct Material {
 		glm::vec3 specular;

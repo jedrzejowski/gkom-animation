@@ -2,6 +2,7 @@
 // Created by adam on 07.04.18.
 //
 
+#include <math.h>
 #include <glm/gtx/normal.hpp>
 
 #include "Point3D.h"
@@ -78,3 +79,10 @@ void Point3DeX::CalcNormals(Point3DeX *points, size_t pSize, SimpleTriangle *tri
 	}
 }
 
+float Point3D::DistanceBetween(const Point3D &point1, const Point3D &point2) {
+	return (float) sqrt(
+			pow(point1.x - point2.x, 2) +
+			pow(point1.y - point2.y, 2) +
+			pow(point1.z - point2.z, 2)
+	);
+}

@@ -5,22 +5,21 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 
-#include <src/3d/Point3D.h>
 #include "MyAnimation.h"
 #include "Screw.h"
 
+using namespace gkom;
 
-gkom::anim::MyAnimation::MyAnimation() {
+anim::MyAnimation::MyAnimation() {
 	shader = new Shader("basic", "basic");
 	shader->use();
 	shader->setInt("material.diffuse", 0);
 
 	light = new Light();
-	light->position = glm::vec3(2.0f, 2.0f, 2.0f);
-	light->ambient = glm::vec3(0.4f);
-	light->diffuse = glm::vec3(8.5f);
-	light->specular = glm::vec3(8.0f);
-
+	light->position = glm::vec3(5.0f, 4.0f, -3.0f);
+	light->ambient = glm::vec3(0.2f);
+	light->diffuse = glm::vec3(0.5f);
+	light->specular = glm::vec3(1.0f);
 
 	klucz = new Wrench(this);
 	nakrentka = new Nut(this);
@@ -41,14 +40,16 @@ gkom::anim::MyAnimation::MyAnimation() {
 
 	podkladka->modelMatrix = glm::scale(podkladka->modelMatrix, glm::vec3(50.0f));
 	podkladka->modelMatrix = glm::rotate(podkladka->modelMatrix, 3.14f / 25, glm::vec3(0.0f, 1.0f, 0.0f));
+
+	add2Angle(0.0f);
 }
 
-gkom::anim::MyAnimation::~MyAnimation() {
+anim::MyAnimation::~MyAnimation() {
 	delete nakrentka, klucz, sruba, podkladka;
 	delete shader;
 }
 
-void gkom::anim::MyAnimation::render(gkom::Window *window) {
+void anim::MyAnimation::render(Window *window) {
 
 
 	shader->setMat4("projection", window->getProjectionMatrix());
@@ -60,15 +61,17 @@ void gkom::anim::MyAnimation::render(gkom::Window *window) {
 	shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
 	shader->setFloat("material.shininess", 64.0f);
 
-	float angle = glfwGetTime() / 5;
+	klucz->render(window);
+	podkladka->render(window);
+	nakrentka->render(window);
+	sruba->render(window);
+}
+
+void anim::MyAnimation::add2Angle(float delta) {
+	angle += delta;
 
 	klucz->modelMatrix = glm::rotate(kluczM4, angle, glm::vec3(0.0, 0.0, 1.0));
 	klucz->modelMatrix = glm::translate(klucz->modelMatrix, glm::vec3(0.0f, -0.8f, 0.0f));
 	nakrentka->modelMatrix = glm::rotate(nakrentkaM4, angle, glm::vec3(0.0, 0.0, 1.0));
-
-//	klucz->render(window);
-//	podkladka->render(window);
-	nakrentka->render(window);
-//	sruba->render(window);
 }
 

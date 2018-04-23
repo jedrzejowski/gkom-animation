@@ -5,9 +5,7 @@
 #ifndef GKOM_ANIMATION_NUT_H
 #define GKOM_ANIMATION_NUT_H
 
-#include <src/3d/Abs3DObj.h>
-#include <src/3d/Shader.h>
-#include <src/3d/Texture.h>
+#include "src/3d/gEngine.h"
 
 using namespace gengine;
 

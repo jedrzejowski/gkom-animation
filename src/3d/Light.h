@@ -7,6 +7,8 @@
 
 #include <glm/vec3.hpp>
 
+#include "gEngine.h"
+
 namespace gengine {
 
 	class Light {

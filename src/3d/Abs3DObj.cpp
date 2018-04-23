@@ -25,7 +25,7 @@ Abs3DObj::~Abs3DObj() {
 void Abs3DObj::insertObjToBuffers() {
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * verticlesNum, vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, Point3DeX::SIZE * verticesNum, vertices, GL_STATIC_DRAW);
 
 	Point3DeX::BindGlVAP();
 

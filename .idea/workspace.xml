@@ -12,26 +12,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b4a3897-b1ad-4537-9896-5c3abb4307df" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Camera.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Camera.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Light.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3d/Light.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/obj/createPoint3DeX.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3d/Window.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3d/Window.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3d/gEngine.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shaders/fragment/basic.frag" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/fragment/basic.frag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shaders/vertex/basic.vert" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/vertex/basic.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Animation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Animation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3d/Abs3DObj.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Abs3DObj.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3d/Abs3DObj.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Abs3DObj.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3d/Animation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Animation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3d/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3d/Light.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Light.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3d/Point3D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Point3D.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3d/Point3D.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Point3D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Shader.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3d/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Shader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3d/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/3d/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/glm_ext.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyWindow.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/obj/MyAnimation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/MyAnimation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/obj/MyAnimation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/MyAnimation.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/obj/Nut.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Nut.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/obj/Nut.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Nut.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/obj/Plate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Plate.cpp" afterDir="false" />
@@ -52,54 +52,44 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyAnimation.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.h">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-              <folding>
-                <element signature="e#114#143#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="48">
+              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyAnimation.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.cpp">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-              <folding>
-                <element signature="e#39#61#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Light.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/3d/Light.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Light.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/3d/Light.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Shader.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Shader.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/3d/Shader.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+              <folding>
+                <element signature="e#104#121#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -128,6 +118,11 @@
       <find>1.0f</find>
       <find>Point3DeX createPoint3DeX</find>
       <find>ourTexture</find>
+      <find>reflect</find>
+      <find>out</find>
+      <find>gkom::</find>
+      <find>MyWindow.h</find>
+      <find>/3d/</find>
     </findStrings>
     <replaceStrings>
       <replace>m</replace>
@@ -135,6 +130,7 @@
       <replace>iron.png</replace>
       <replace>1.0</replace>
       <replace>texScale</replace>
+      <replace>in</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -143,8 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/path.h" />
-        <option value="$PROJECT_DIR$/src/file.cpp" />
         <option value="$PROJECT_DIR$/src/exception.h" />
         <option value="$PROJECT_DIR$/src/window.cpp" />
         <option value="$PROJECT_DIR$/src/3d/shader.cpp" />
@@ -157,40 +151,45 @@
         <option value="$PROJECT_DIR$/src/file.h" />
         <option value="$PROJECT_DIR$/src/FileSystem.h" />
         <option value="$PROJECT_DIR$/src/3d/Texture.h" />
-        <option value="$PROJECT_DIR$/src/Window.h" />
         <option value="$PROJECT_DIR$/shaders/fragment/tester.frag" />
         <option value="$PROJECT_DIR$/src/Animation.cpp" />
         <option value="$PROJECT_DIR$/src/Animation.h" />
         <option value="$PROJECT_DIR$/src/obj/Animation.h" />
         <option value="$PROJECT_DIR$/src/obj/Animation.cpp" />
         <option value="$PROJECT_DIR$/src/lib/glm_ext.hpp" />
-        <option value="$PROJECT_DIR$/src/Window.cpp" />
         <option value="$PROJECT_DIR$/src/3d/Abs3DObj.cpp" />
         <option value="$PROJECT_DIR$/src/obj/createPoint3DeX.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/shaders/vertex/basic.vert" />
-        <option value="$PROJECT_DIR$/src/3d/Point3D.cpp" />
         <option value="$PROJECT_DIR$/src/3d/Texture.cpp" />
-        <option value="$PROJECT_DIR$/src/3d/Point3D.h" />
-        <option value="$PROJECT_DIR$/src/3d/Shader.h" />
         <option value="$PROJECT_DIR$/src/3d/Shader.cpp" />
-        <option value="$PROJECT_DIR$/src/3d/Abs3DObj.h" />
-        <option value="$PROJECT_DIR$/src/obj/MyAnimation.h" />
+        <option value="$PROJECT_DIR$/src/3d/Animation.cpp" />
+        <option value="$PROJECT_DIR$/shaders/vertex/basic.vert" />
         <option value="$PROJECT_DIR$/shaders/fragment/basic.frag" />
-        <option value="$PROJECT_DIR$/src/3d/Camera.h" />
+        <option value="$PROJECT_DIR$/src/3d/Point3D.cpp" />
+        <option value="$PROJECT_DIR$/src/Window.h" />
+        <option value="$PROJECT_DIR$/src/Window.cpp" />
+        <option value="$PROJECT_DIR$/src/3d/Window.cpp" />
+        <option value="$PROJECT_DIR$/src/MyWindow.h" />
+        <option value="$PROJECT_DIR$/src/MyWindow.cpp" />
+        <option value="$PROJECT_DIR$/src/obj/Plate.cpp" />
+        <option value="$PROJECT_DIR$/src/obj/MyAnimation.h" />
+        <option value="$PROJECT_DIR$/src/obj/Nut.h" />
+        <option value="$PROJECT_DIR$/src/obj/Plate.h" />
+        <option value="$PROJECT_DIR$/src/obj/Screw.h" />
         <option value="$PROJECT_DIR$/src/obj/Wrench.h" />
         <option value="$PROJECT_DIR$/src/obj/Wrench.cpp" />
-        <option value="$PROJECT_DIR$/src/3d/Animation.cpp" />
-        <option value="$PROJECT_DIR$/src/3d/Animation.h" />
-        <option value="$PROJECT_DIR$/src/obj/Plate.h" />
-        <option value="$PROJECT_DIR$/src/obj/Plate.cpp" />
-        <option value="$PROJECT_DIR$/src/obj/Screw.h" />
         <option value="$PROJECT_DIR$/src/obj/Screw.cpp" />
-        <option value="$PROJECT_DIR$/src/obj/Nut.h" />
         <option value="$PROJECT_DIR$/src/obj/Nut.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/3d/Light.h" />
         <option value="$PROJECT_DIR$/src/obj/MyAnimation.cpp" />
+        <option value="$PROJECT_DIR$/src/3d/gEngine.h" />
+        <option value="$PROJECT_DIR$/src/3d/Window.h" />
+        <option value="$PROJECT_DIR$/src/3d/Light.h" />
+        <option value="$PROJECT_DIR$/src/3d/Camera.h" />
+        <option value="$PROJECT_DIR$/src/3d/Animation.h" />
+        <option value="$PROJECT_DIR$/src/3d/Abs3DObj.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/src/3d/Point3D.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/3d/Shader.h" />
       </list>
     </option>
   </component>
@@ -250,18 +249,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="3d" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gkom_animation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gkom-animation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gkom_animation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gkom-animation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="obj" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -270,7 +257,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="win&#9;FILE&#9;file:///home/adam/Programowanie/studia/gkom-animation/src/Window.cpp" />
+    <property name="SearchEverywhereHistoryKey" value="wind&#9;FILE&#9;file:///home/adam/Programowanie/studia/gkom-animation/src/Window.cpp&#10;win&#9;FILE&#9;file:///home/adam/Programowanie/studia/gkom-animation/src/Window.cpp" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CMake" />
   </component>
@@ -283,123 +270,6 @@
       <recent name="$PROJECT_DIR$/shaders/fragment" />
       <recent name="$PROJECT_DIR$/src/3d" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/3d/Abs3DObj.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/3d/Abs3DObj.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/3d/Texture.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/obj/MyAnimation.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/obj/Nut.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/obj/Plate.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/obj/Plate.h</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -441,6 +311,8 @@
       <workItem from="1523865884502" duration="11669000" />
       <workItem from="1523953143295" duration="10962000" />
       <workItem from="1524004400802" duration="1628000" />
+      <workItem from="1524213172923" duration="9737000" />
+      <workItem from="1524480213393" duration="6353000" />
     </task>
     <task id="LOCAL-00001" summary="Commit bezpieczeństwa">
       <created>1523740757410</created>
@@ -467,39 +339,30 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105435000" />
+    <option name="totallyTimeSpent" value="124267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="769" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20297398" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20223048" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32554516" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.3257732" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.4470405" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.32554516" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3271028" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3271028" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32554516" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32763976" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.33229813" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20263852" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32763976" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32680413" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33229813" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.3257732" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,52 +384,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FileSystem.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileSystem.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/sys/types.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="150" column="21" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding>
-            <element signature="e#104#124#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/plotcompat.h" />
-    <entry file="file:///usr/include/c++/7.3.1/bits/char_traits.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7.3.1/bits/move.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -578,20 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/math.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="641" column="9" selection-start-line="641" selection-start-column="9" selection-end-line="641" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/GLFW/glfw3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="3737" column="15" selection-start-line="3737" selection-start-column="15" selection-end-line="3737" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -609,13 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/3d/Abs3DObj.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -627,13 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-645">
           <caret line="914" column="36" selection-start-line="914" selection-start-column="22" selection-end-line="914" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Texture.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -658,12 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="105" column="49" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
-          <folding>
-            <element signature="e#1751#1776#0" expanded="true" />
-            <element signature="e#1801#1826#0" expanded="true" />
-            <element signature="e#1851#1876#0" expanded="true" />
-            <element signature="e#1901#1926#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,17 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-336">
           <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-          <folding>
-            <element signature="e#322#358#0" expanded="true" />
-            <element signature="e#1061#1559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -706,61 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Texture.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Point3D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-          <folding>
-            <element signature="e#102#122#0" expanded="true" />
-            <element signature="e#1239#1613#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/vertex/basic.vert">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Point3D.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-          <folding>
-            <element signature="e#39#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/fragment/basic.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Camera.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/Wrench.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
-          <folding>
-            <element signature="e#39#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/3d/Shader.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -775,144 +492,261 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Animation.h">
+    <entry file="file://$PROJECT_DIR$/src/lib/glm_ext.hpp" />
+    <entry file="file://$PROJECT_DIR$/shaders/vertex/basic.vert">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Abs3DObj.h">
+    <entry file="file://$PROJECT_DIR$/shaders/fragment/basic.frag">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="e#108#128#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="328">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/Nut.cpp">
+    <entry file="file:///usr/include/c++/7.3.1/math.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#39#61#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-720" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/Nut.h">
+    <entry file="file://$PROJECT_DIR$/src/3d/Camera.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/include/math.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="136">
+          <caret line="641" column="9" selection-start-line="641" selection-start-column="9" selection-end-line="641" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/Plate.h">
+    <entry file="file:///usr/include/glm/detail/func_geometric.inl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="e#102#130#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="178" column="35" selection-start-line="178" selection-start-column="35" selection-end-line="178" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/Screw.cpp">
+    <entry file="file:///usr/include/GLFW/glfw3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="1833" column="60" selection-start-line="1833" selection-start-column="60" selection-end-line="1833" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyWindow.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
-          <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
-          <folding>
-            <element signature="e#39#61#0" expanded="true" />
-          </folding>
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/Screw.h">
+    <entry file="file://$PROJECT_DIR$/src/MyWindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        <state relative-caret-position="240">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding>
-            <element signature="e#102#130#0" expanded="true" />
+            <element signature="e#39#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/obj/Plate.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="52" />
+        <state relative-caret-position="361">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
           <folding>
             <element signature="e#39#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Camera.h">
+    <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="128">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/obj/Wrench.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/obj/Nut.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/obj/Screw.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/obj/Nut.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/obj/Plate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/obj/Screw.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/obj/Wrench.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state relative-caret-position="112">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Texture.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
           <folding>
-            <element signature="e#104#132#0" expanded="true" />
+            <element signature="e#73#99#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/glm_ext.hpp">
+    <entry file="file:///usr/include/zconf.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Animation.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Camera.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#104#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Light.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Texture.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#106#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Window.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Abs3DObj.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding>
+            <element signature="e#108#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Point3D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="81" column="15" selection-start-line="81" selection-start-column="15" selection-end-line="81" selection-end-column="15" />
+          <folding>
+            <element signature="e#39#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/Point3D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
+          <folding>
+            <element signature="e#102#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/3d/gEngine.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="50" column="27" lean-forward="true" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="e#114#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Light.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/3d/Light.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="304">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/3d/Shader.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/obj/MyAnimation.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
-            <element signature="e#39#61#0" expanded="true" />
+            <element signature="e#104#121#0" expanded="true" />
           </folding>
         </state>
       </provider>

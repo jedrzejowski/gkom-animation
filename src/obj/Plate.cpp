@@ -9,7 +9,7 @@ using namespace gkom;
 using namespace gengine;
 
 anim::Plate::Plate(Animation *anim) :
-		Abs3DObj(anim){
+		Abs3DObj(anim) {
 
 	textureWood = Texture("wood.png");
 	textureBricks = Texture("brick.png");
@@ -31,8 +31,8 @@ void anim::Plate::initVertices() {
 	uint I = 0;
 	float r = 1.0f, x, y, z;
 
-	verticlesNum = 4 * 6;
-	vertices = new Point3DeX[verticlesNum]{
+	verticesNum = 4 * 6;
+	vertices = new Point3DeX[verticesNum]{
 			//Prawa
 			Point3DeX(-0.5f, -0.5f, -0.5f, TexCoord(0.0f, 0.0f)),
 			Point3DeX(0.5f, -0.5f, -0.5f, TexCoord(texScale, 0.0f)),
@@ -72,9 +72,11 @@ void anim::Plate::initVertices() {
 	indices = new SimpleTriangle[indicesNum];
 
 	for (uint i = 0; i < 6; i++) {
-		indices[I++] = SimpleTriangle(0, 1, 3) + 4*i;
-		indices[I++] = SimpleTriangle(0, 2, 3) + 4*i;
+		indices[I++] = SimpleTriangle(0, 1, 3) + 4 * i;
+		indices[I++] = SimpleTriangle(0, 3, 2) + 4 * i;
 	}
+
+	Point3DeX::CalcNormals(vertices, verticesNum, indices, indicesNum);
 }
 
 void anim::Plate::render(Window *window) {
@@ -82,8 +84,8 @@ void anim::Plate::render(Window *window) {
 	anim->getShader().setMat4("model", modelMatrix);
 
 	textureWood.use();
-	draw(0,1);
-	draw(5,6);
+	draw(0, 1);
+	draw(5, 6);
 	textureBricks.use();
-	draw(9,10);
+	draw(9, 10);
 }

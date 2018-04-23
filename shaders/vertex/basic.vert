@@ -19,7 +19,8 @@ void main() {
 
 	FragPos = vec3(model * vec4(iPosition, 1.0));
 
+    Normal = mat3(transpose(inverse(model))) * iNormal;
+
     Color = iColor;
     TexCoord = iTexCoord;
-    Normal = iNormal;
 }

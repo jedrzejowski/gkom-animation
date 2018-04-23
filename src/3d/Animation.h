@@ -5,14 +5,13 @@
 #ifndef GKOM_ANIMATION_ANIMATION_H
 #define GKOM_ANIMATION_ANIMATION_H
 
-#include "src/Window.h"
+#include "gEngine.h"
 
 namespace gengine {
 
 	class Animation {
 
 	protected:
-		GLuint VAO;
 		Light* light;
 		Shader* shader;
 
@@ -21,11 +20,7 @@ namespace gengine {
 
 		~Animation();
 
-		virtual void render(gkom::Window *window) = 0;
-
-		const GLuint getVAO() const {
-			return VAO;
-		}
+		virtual void render(Window *window) = 0;
 
 		const Light& getLight() const{
 			return *light;

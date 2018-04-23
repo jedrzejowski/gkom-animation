@@ -10,16 +10,18 @@
 #include <glm/detail/type_mat.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "gEngine.h"
+
 namespace gengine {
 
 	class Camera {
 	public:
 		glm::vec3 position;
-		glm::vec3 lookAt;
+		glm::vec3 front;
 		glm::vec3 up;
 
 		glm::mat4 getMatrix(){
-			return glm::lookAt(position, lookAt, up);
+			return glm::lookAt(position, position + front, up);
 		}
 	};
 }

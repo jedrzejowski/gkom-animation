@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <src/Window.h>
+//#include <src/MyWindow.h>
 #include <src/exception.h>
 
 using namespace std;
@@ -8,8 +8,8 @@ using namespace std;
 int main() {
 
 	try {
-		gkom::Window win = gkom::Window();
-		win.init().open();
+//		gkom::MyWindow win = gkom::MyWindow();
+//		win.open();
 	} catch (std::exception &e) {
 		std::cout << e.what();
 	} catch (gkom::exception &e) {

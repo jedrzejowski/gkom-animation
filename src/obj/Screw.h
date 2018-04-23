@@ -5,8 +5,7 @@
 #ifndef GKOM_ANIMATION_SCREW_H
 #define GKOM_ANIMATION_SCREW_H
 
-#include "src/3d/Abs3DObj.h"
-#include "src/3d/Texture.h"
+#include "src/3d/gEngine.h"
 
 using namespace gengine;
 

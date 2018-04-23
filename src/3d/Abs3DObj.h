@@ -6,8 +6,8 @@
 #define GKOM_ANIMATION_ABS3DOBJ_H
 
 #include <GL/glew.h>
-#include "src/Window.h"
-#include "Animation.h"
+
+#include "gEngine.h"
 
 namespace gengine {
 	class Abs3DObj {
@@ -18,7 +18,7 @@ namespace gengine {
 
 		struct Point3DeX* vertices;
 		struct SimpleTriangle* indices;
-		uint verticlesNum;
+		uint verticesNum;
 		uint indicesNum;
 
 		void draw();
@@ -29,7 +29,7 @@ namespace gengine {
 		Abs3DObj(Animation* anim);
 
 		~Abs3DObj();
-		virtual void render(gkom::Window *window) = 0;
+		virtual void render(Window *window) = 0;
 
 		void insertObjToBuffers();
 

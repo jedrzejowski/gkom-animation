@@ -6,14 +6,17 @@
 #define GKOM_ANIMATION_POINT_H
 
 #include <GL/glew.h>
-#include <zconf.h>
 #include <glm/vec3.hpp>
 
 namespace gengine {
 
+	struct Point3DeX;
+
 	struct Point3D {
 		static uint SIZE;
 		static uint OFFSET;
+
+		static float DistanceBetween(const Point3D &point1, const Point3D &point2);
 
 		GLfloat x = 0.0f;
 		GLfloat y = 0.0f;
@@ -79,6 +82,7 @@ namespace gengine {
 
 		SimpleTriangle(const uint first, const uint second, const uint third) : first(first), second(second),
 																				third(third) {}
+
 		SimpleTriangle operator+(const int &n);
 
 		SimpleTriangle &operator+=(const int &n);
@@ -88,6 +92,7 @@ namespace gengine {
 		static uint SIZE;
 
 		static void BindGlVAP();
+
 		static void CalcNormals(Point3DeX *points, size_t pSize, SimpleTriangle *triangles, size_t tSize);
 
 		Point3D point;
@@ -95,12 +100,13 @@ namespace gengine {
 		Color color;
 		TexCoord texture;
 
-
 		Point3DeX() {}
 
 		Point3DeX(Point3D p) : point(p) {}
 
 		Point3DeX(Point3D p, Color c) : point(p), color(c) {}
+
+		Point3DeX(Point3D p, TexCoord t) : point(p), texture(t) {}
 
 		Point3DeX(Point3D p, Color c, TexCoord t) : point(p), color(c), texture(t) {}
 

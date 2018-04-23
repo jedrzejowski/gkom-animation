@@ -5,7 +5,8 @@
 #ifndef GKOM_ANIMATION_MYANIMATION_H
 #define GKOM_ANIMATION_MYANIMATION_H
 
-#include <src/3d/Animation.h>
+#include "src/3d/gEngine.h"
+
 #include "Nut.h"
 #include "Wrench.h"
 #include "Screw.h"
@@ -21,12 +22,16 @@ namespace gkom::anim {
 
 		glm::mat4 nakrentkaM4, kluczM4;
 
+		float angle;
+
 	public:
 		MyAnimation();
 
 		~MyAnimation();
 
 		void render(Window *window);
+
+		void add2Angle(float delta);
 	};
 }
 

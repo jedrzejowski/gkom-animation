@@ -7,36 +7,53 @@ find_package(PkgConfig)
 set(CMAKE_CXX_STANDARD 11)
 set(APP_TARGET gkom_animation)
 
-
 include_directories(${PROJECT_SOURCE_DIR})
-add_executable(${APP_TARGET}
-		main.cpp
+
+
+add_executable(${APP_TARGET} main.cpp)
+
+#gEngine
+target_sources(${APP_TARGET} PUBLIC
+		src/3d/Point3D.h
+		src/3d/Point3D.cpp
+
+		src/3d/Texture.h
+		src/3d/Texture.cpp
+		src/3d/Light.h
+		src/3d/Light.cpp
+		src/3d/Shader.h
+		src/3d/Shader.cpp
+		src/3d/Camera.h
+		src/3d/Camera.cpp
+
+		src/3d/Window.h
+		src/3d/Window.cpp
+		src/3d/Animation.h
+		src/3d/Animation.cpp
+		src/3d/Abs3DObj.cpp
+		src/3d/Abs3DObj.h
+
+		src/3d/gEngine.h)
+
+target_sources(${APP_TARGET} PUBLIC
 		src/lib/stb_image.h
 		src/FileSystem.cpp
 		src/FileSystem.h
-		src/3d/Shader.cpp
-		src/3d/Shader.h
 		src/exception.cpp
 		src/exception.h
-		src/Window.cpp
-		src/Window.h
-		src/3d/Abs3DObj.cpp
-		src/3d/Abs3DObj.h
-        src/obj/Nut.cpp
-        src/obj/Nut.h
-		src/3d/Point3D.cpp
-		src/3d/Point3D.h
-		src/3d/Texture.cpp
-		src/3d/Texture.h
+		src/MyWindow.cpp
+		src/MyWindow.h
+		src/obj/Nut.cpp
+		src/obj/Nut.h
 		src/obj/Wrench.cpp
 		src/obj/Wrench.h
-		src/3d/Animation.cpp
-		src/3d/Animation.h
 		src/obj/MyAnimation.cpp
 		src/obj/MyAnimation.h
 		src/obj/Screw.cpp
 		src/obj/Screw.h
-		src/obj/Plate.cpp src/obj/Plate.h src/obj/createPoint3DeX.h src/3d/Camera.cpp src/3d/Camera.h src/3d/Light.cpp src/3d/Light.h)
+		src/obj/Plate.cpp
+		src/obj/Plate.h
+		src/obj/createPoint3DeX.h)
 
 # glfw
 find_package(glfw3 REQUIRED)

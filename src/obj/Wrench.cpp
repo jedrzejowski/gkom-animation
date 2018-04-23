@@ -5,7 +5,6 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <src/3d/Point3D.h>
 
 #include "Wrench.h"
 #include "createPoint3DeX.h"
@@ -32,74 +31,86 @@ anim::Wrench::~Wrench() {
 
 void anim::Wrench::initVertices() {
 	Color color = Color(1.0f, 0.0f, 0.0f);
+	uint wallNum = 12;
 
-	verticlesNum = (8 + 4) * 2;
-	vertices = new Point3DeX[verticlesNum];
+	verticesNum = wallNum * 2 + wallNum * 4;
+	vertices = new Point3DeX[verticesNum];
 
-	unsigned int I = 0;
+	indicesNum = (wallNum + 9) * 2;
+	indices = new SimpleTriangle[indicesNum];
+
+	uint I = 0, N = 0;
 
 	auto b = 1.0f;
 	auto a = (float) (b * sin(22.5 * M_PI / 180));
 	float z = -0.25f;
 
-	//Punkty
+	//góra i dół
 	for (int i = 0; i < 2; i++) {
 
+		//Prawa strona klucza
+		indices[N++] = SimpleTriangle(I + 2, I + 1, I);
+		indices[N++] = SimpleTriangle(I + 3, I + 2, I);
 		vertices[I++] = createPoint3DeX(a, b, z, color);
 		vertices[I++] = createPoint3DeX(b, a, z, color);
 		vertices[I++] = createPoint3DeX(b, -a, z, color);
 		vertices[I++] = createPoint3DeX(a, -b, z, color);
 
-		vertices[I++] = createPoint3DeX(a, -b * 5, z, color);
-		vertices[I++] = createPoint3DeX(-a, -b * 5, z, color);
-
+		//Lewa strona klucza
+		indices[N++] = SimpleTriangle(I + 3, I + 1, I);
+		indices[N++] = SimpleTriangle(I + 3, I + 2, I + 1);
 		vertices[I++] = createPoint3DeX(-a, -b, z, color);
 		vertices[I++] = createPoint3DeX(-b, -a, z, color);
 		vertices[I++] = createPoint3DeX(-b, a, z, color);
 		vertices[I++] = createPoint3DeX(-a, b, z, color);
 
+		//Rączka
+		indices[N++] = SimpleTriangle(I + 2, I + 1, I);
+		indices[N++] = SimpleTriangle(I + 3, I + 2, I);
+		vertices[I++] = createPoint3DeX(a, -b * 5, z, color);
+		vertices[I++] = createPoint3DeX(-a, -b * 5, z, color);
 		vertices[I++] = createPoint3DeX(-a, -a, z, color);
 		vertices[I++] = createPoint3DeX(a, -a, z, color);
 
 		z += 0.5f;
 	}
 
-	//Ściany
-	uint wallNum = 12;
-	indicesNum = (wallNum + 9) * 2;
-	indices = new SimpleTriangle[indicesNum];
-	I = 0;
-
-	//Góra i dół
-	for (int n = 0; n <= 12; n += 12) {
-
-		indices[I++] = SimpleTriangle(11, 0, 1) + n;
-		indices[I++] = SimpleTriangle(11, 1, 2) + n;
-		indices[I++] = SimpleTriangle(11, 2, 3) + n;
-
-		indices[I++] = SimpleTriangle(10, 9, 8) + n;
-		indices[I++] = SimpleTriangle(10, 8, 7) + n;
-		indices[I++] = SimpleTriangle(10, 7, 6) + n;
-
-		indices[I++] = SimpleTriangle(10, 11, 4) + n;
-		indices[I++] = SimpleTriangle(10, 5, 4) + n;
-
-	}
-
 	//Boki
-	for (unsigned int i = 0; i < wallNum - 1; i++) {
-		indices[I++] = SimpleTriangle(i + 0, i + 1, i + wallNum + 1);
-		indices[I++] = SimpleTriangle(i + 0, i + wallNum, i + wallNum + 1);
+	uint wallOrder[] = {
+			0, 1, 2, 3,
+			8, 9,
+			4, 5, 6, 7,
+			10, 11,
+			0
+	};
+	for (uint i = 0; i < wallNum; i++) {
+		uint t1 = wallOrder[i],
+				t2 = wallOrder[i + 1],
+				b1 = t1 + wallNum,
+				b2 = t2 + wallNum;
+
+//		cout << t1 << ":" << t2 << ":" << b1 << ":" << b2 << endl;
+
+		indices[N++] = SimpleTriangle(I, I + 1, I + 2);
+		indices[N++] = SimpleTriangle(I + 3, I + 2, I + 1);
+
+		float d1 = Point3D::DistanceBetween(vertices[t1].point, vertices[t2].point) / 2;
+		float d2 = Point3D::DistanceBetween(vertices[t1].point, vertices[b1].point) / 2;
+
+		vertices[I++] = Point3DeX(vertices[t1].point, TexCoord(0.0f, 0.0f));
+		vertices[I++] = Point3DeX(vertices[t2].point, TexCoord(d1, 0.0f));
+		vertices[I++] = Point3DeX(vertices[b1].point, TexCoord(0.0f, d2));
+		vertices[I++] = Point3DeX(vertices[b2].point, TexCoord(d1, d2));
+
 	}
-	indices[I++] = SimpleTriangle(wallNum - 1, 0, wallNum * 2 - 1);
-	indices[I++] = SimpleTriangle(wallNum, 0, wallNum * 2 - 1);
 
-	indicesNum = I;
+	verticesNum = I;
+	indicesNum = N;
 
-	Point3DeX::CalcNormals(vertices, verticlesNum, indices, indicesNum);
+	Point3DeX::CalcNormals(vertices, verticesNum, indices, indicesNum);
 }
 
-void anim::Wrench::render(gkom::Window *window) {
+void anim::Wrench::render(Window *window) {
 
 	anim->getShader().setMat4("model", modelMatrix);
 	texture.use();
