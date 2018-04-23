@@ -51,7 +51,6 @@ anim::MyAnimation::~MyAnimation() {
 
 void anim::MyAnimation::render(Window *window) {
 
-
 	shader->setMat4("projection", window->getProjectionMatrix());
 	shader->setMat4("camera", window->getCamera().getMatrix());
 	shader->setVec3("cameraPos", window->getCamera().position);
@@ -71,7 +70,8 @@ void anim::MyAnimation::add2Angle(float delta) {
 	angle += delta;
 
 	klucz->modelMatrix = glm::rotate(kluczM4, angle, glm::vec3(0.0, 0.0, 1.0));
-	klucz->modelMatrix = glm::translate(klucz->modelMatrix, glm::vec3(0.0f, -0.8f, 0.0f));
+	klucz->modelMatrix = glm::translate(klucz->modelMatrix, glm::vec3(0.0f, -0.8f, angle / 3 / 1.33));
 	nakrentka->modelMatrix = glm::rotate(nakrentkaM4, angle, glm::vec3(0.0, 0.0, 1.0));
+	nakrentka->modelMatrix = glm::translate(nakrentka->modelMatrix, glm::vec3(0.0f, 0.0f, angle / 3 / 0.67f));
 }
 

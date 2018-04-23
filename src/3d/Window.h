@@ -8,8 +8,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/detail/type_mat.hpp>
-
-#include "gEngine.h"
+#include "Camera.h"
 
 namespace gengine {
 	class Window {
@@ -25,11 +24,10 @@ namespace gengine {
 		virtual void windowLoop() = 0;
 
 	public:
-		Window();
 
-		Window init();
+		virtual void initObjects() = 0;
 
-		Window open();
+		void open();
 
 		Camera getCamera() {
 			return camera;

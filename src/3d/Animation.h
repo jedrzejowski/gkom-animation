@@ -5,7 +5,9 @@
 #ifndef GKOM_ANIMATION_ANIMATION_H
 #define GKOM_ANIMATION_ANIMATION_H
 
-#include "gEngine.h"
+#include "Light.h"
+#include "Shader.h"
+#include "Window.h"
 
 namespace gengine {
 
@@ -16,9 +18,6 @@ namespace gengine {
 		Shader* shader;
 
 	public:
-		Animation();
-
-		~Animation();
 
 		virtual void render(Window *window) = 0;
 

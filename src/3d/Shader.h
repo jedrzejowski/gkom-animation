@@ -8,8 +8,7 @@
 #include <string>
 #include <GL/glew.h>
 #include <glm/glm.hpp>
-
-#include "gEngine.h"
+#include "Light.h"
 
 namespace gengine {
 

@@ -2,9 +2,10 @@
 // Created by adam on 07.04.18.
 //
 
-#ifndef GKOM_ANIMATION_WINDOW_H
-#define GKOM_ANIMATION_WINDOW_H
+#ifndef GKOM_MYANIMATION_WINDOW_H
+#define GKOM_MYANIMATION_WINDOW_H
 
+#include "exception.h"
 #include <src/3d/Window.h>
 #include <src/obj/MyAnimation.h>
 
@@ -15,10 +16,16 @@ namespace gkom {
 
 		void keyCallback(GLFWwindow *window);
 
+		void initObjects();
 		void windowLoop();
 
 	public:
 		MyWindow();
+		~MyWindow();
+
+		virtual std::string getTitle(){
+			return "GKOM - Adam Jedrzejowski";
+		}
 	};
 }
 

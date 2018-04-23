@@ -7,15 +7,3 @@
 #include "Animation.h"
 
 using namespace gengine;
-
-Animation::Animation() {
-
-	glGenVertexArrays(1, &VAO);
-	glBindVertexArray(VAO);
-}
-
-
-Animation::~Animation() {
-	glDeleteVertexArrays(1, &VAO);
-}
-

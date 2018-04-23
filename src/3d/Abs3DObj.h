@@ -6,8 +6,7 @@
 #define GKOM_ANIMATION_ABS3DOBJ_H
 
 #include <GL/glew.h>
-
-#include "gEngine.h"
+#include "Animation.h"
 
 namespace gengine {
 	class Abs3DObj {

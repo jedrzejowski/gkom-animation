@@ -20,8 +20,6 @@ anim::Wrench::Wrench(Animation *anim) :
 	initVertices();
 
 	insertObjToBuffers();
-
-
 }
 
 anim::Wrench::~Wrench() {

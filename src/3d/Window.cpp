@@ -7,10 +7,8 @@
 
 using namespace gengine;
 
-Window::Window() {
-}
+void Window::open() {
 
-Window Window::init() {
 	if (glfwInit() != GL_TRUE)
 		throw gkom::exception("GLFW initialization failed");
 
@@ -20,11 +18,6 @@ Window Window::init() {
 #ifdef DARWIN
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
-
-	return *this;
-}
-
-Window Window::open() {
 
 	glfwWin = glfwCreateWindow(WIDTH, HEIGHT, getTitle().c_str(), nullptr, nullptr);
 
@@ -41,6 +34,8 @@ Window Window::open() {
 	glEnable(GL_DEPTH_TEST);
 
 //	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+	initObjects();
 
 	while (!glfwWindowShouldClose(glfwWin)) {
 		currentFrame = (float) glfwGetTime();
@@ -60,6 +55,4 @@ Window Window::open() {
 
 
 	glfwTerminate();
-
-	return *this;
 }
