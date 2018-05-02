@@ -6,8 +6,8 @@
 #define GKOM_MYANIMATION_WINDOW_H
 
 #include "exception.h"
-#include <src/3d/Window.h>
-#include <src/obj/MyAnimation.h>
+#include "src/3d/Window.h"
+#include "src/obj/MyAnimation.h"
 
 namespace gkom {
 	class MyWindow : public gengine::Window {

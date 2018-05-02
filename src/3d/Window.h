@@ -5,9 +5,7 @@
 #ifndef GKOM_ANIMATION_WINDOW_H
 #define GKOM_ANIMATION_WINDOW_H
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <glm/detail/type_mat.hpp>
+#include "../opengl.h"
 #include "Camera.h"
 
 namespace gengine {

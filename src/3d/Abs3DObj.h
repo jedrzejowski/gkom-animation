@@ -5,7 +5,7 @@
 #ifndef GKOM_ANIMATION_ABS3DOBJ_H
 #define GKOM_ANIMATION_ABS3DOBJ_H
 
-#include <GL/glew.h>
+#include "../opengl.h"
 #include "Animation.h"
 
 namespace gengine {

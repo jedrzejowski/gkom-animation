@@ -5,8 +5,7 @@
 #ifndef GKOM_ANIMATION_POINT_H
 #define GKOM_ANIMATION_POINT_H
 
-#include <GL/glew.h>
-#include <glm/vec3.hpp>
+#include "../opengl.h"
 
 namespace gengine {
 

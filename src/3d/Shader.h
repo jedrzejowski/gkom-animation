@@ -6,8 +6,7 @@
 #define GKOM_ANIMATION_SHADER_H
 
 #include <string>
-#include <GL/glew.h>
-#include <glm/glm.hpp>
+#include "../opengl.h"
 #include "Light.h"
 
 namespace gengine {

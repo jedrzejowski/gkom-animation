@@ -5,10 +5,7 @@
 #ifndef GKOM_ANIMATION_CAMERA_H
 #define GKOM_ANIMATION_CAMERA_H
 
-#include <glm/vec3.hpp>
-#include <glm/mat4x4.hpp>
-#include <glm/detail/type_mat.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include "../opengl.h"
 
 namespace gengine {
 

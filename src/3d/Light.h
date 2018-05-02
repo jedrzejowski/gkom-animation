@@ -5,7 +5,7 @@
 #ifndef GKOM_ANIMATION_LIGHT_H
 #define GKOM_ANIMATION_LIGHT_H
 
-#include <glm/vec3.hpp>
+#include "../opengl.h"
 
 namespace gengine {
 
