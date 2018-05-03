@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\3d\Abs3DObj.cpp" />
+    <ClCompile Include="src\3d\Animation.cpp" />
+    <ClCompile Include="src\3d\Camera.cpp" />
+    <ClCompile Include="src\3d\Light.cpp" />
+    <ClCompile Include="src\3d\Point3D.cpp" />
+    <ClCompile Include="src\3d\Shader.cpp" />
+    <ClCompile Include="src\3d\Texture.cpp" />
+    <ClCompile Include="src\3d\Window.cpp" />
+    <ClCompile Include="src\obj\MyAnimation.cpp" />
+    <ClCompile Include="src\obj\Nut.cpp" />
+    <ClCompile Include="src\obj\Plate.cpp" />
+    <ClCompile Include="src\obj\Screw.cpp" />
+    <ClCompile Include="src\obj\Wrench.cpp" />
+    <ClCompile Include="src\exception.cpp" />
+    <ClCompile Include="src\FileSystem.cpp" />
+    <ClCompile Include="src\MyWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\3d\Abs3DObj.h" />
+    <ClInclude Include="src\3d\Animation.h" />
+    <ClInclude Include="src\3d\Camera.h" />
+    <ClInclude Include="src\3d\gEngine.h" />
+    <ClInclude Include="src\3d\Light.h" />
+    <ClInclude Include="src\3d\Point3D.h" />
+    <ClInclude Include="src\3d\Shader.h" />
+    <ClInclude Include="src\3d\Texture.h" />
+    <ClInclude Include="src\3d\Window.h" />
+    <ClInclude Include="src\obj\createPoint3DeX.h" />
+    <ClInclude Include="src\obj\MyAnimation.h" />
+    <ClInclude Include="src\obj\Nut.h" />
+    <ClInclude Include="src\obj\Plate.h" />
+    <ClInclude Include="src\obj\Screw.h" />
+    <ClInclude Include="src\obj\Wrench.h" />
+    <ClInclude Include="src\exception.h" />
+    <ClInclude Include="src\FileSystem.h" />
+    <ClInclude Include="src\MyWindow.h" />
+  </ItemGroup>
+</Project>
